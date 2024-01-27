@@ -1,0 +1,48 @@
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+
+
+}
+
+:root {
+  --gradient: linear-gradient(
+    45deg,
+    #e7eaef,
+    #9ba8b8
+  );
+}
+
+
+body, #root {
+  height: 100%;
+  width: 100%;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  z-index: 0;
+  background-image: var(--gradient);
+  background-size: 200% 200%;
+  animation: bg-animation 10s infinite alternate;
+  }
+
+  @keyframes bg-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+p{
+  color:#484e56;
+}
+
+h1{
+  color:#080b11;
+}
+
+h2{
+  color:#080b11;
+}
