@@ -1,11 +1,11 @@
 import React from 'react'
 import './Header.css'
+import headerImg from '../../Media/controller.png'
 
 function Header() {
   return (
     <div className= 'top-screen'>
-    
-      Header
+      <img className='image' src={headerImg} alt='Game controller' />
    
     </div>
   )
