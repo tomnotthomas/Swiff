@@ -3,4 +3,29 @@
   background-color: black;
   width: 100%;
   height: 35rem;
+  display: flex;
+}
+
+.advantages-left {
+  background-color: white;
+  width:50%;
+}
+
+.advantages-right {
+  background-color:black;
+  width: 50%;
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: space-evenly;
+  ;
+}
+
+.info-box {
+  border-style: solid;
+  border-width:1px;
+  width: 80%;
+  height: 22%;
+  border-color: white;
+  border-radius: 5px;
 }
