@@ -25,7 +25,7 @@ function Login() {
           </button>
           <div id='login-create-account'>
 
-            <p>New to Gamix?</p>
+            <p>New to GoodSpeed?</p>
             <a href='example.com'>create an account</a>
           </div>
           </div>

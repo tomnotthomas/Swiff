@@ -56,7 +56,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={ <Home games={games} steamGames={steamGames}/> } />
+        <Route path="/auth/steam/return" element={ <Home games={games} steamGames={steamGames}/> } />
         <Route path="/login" element={ <Login/> } />
         <Route path="/registration" element={ <Login/> } />
       </Routes>
