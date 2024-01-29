@@ -7,7 +7,7 @@ import './LoginPage.css'
 function Login() {
 
   const handleAuth =() => {
-    window.location.href = 'http://localhost:3000/auth/steam';
+    window.location.href = 'http://localhost:3001/auth/steam';
   };
 
 

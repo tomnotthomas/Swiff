@@ -26,7 +26,7 @@ function App() {
   }, [steamGames]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/steamgames`)
+    fetch(`http://localhost:3001/steamgames`)
       .then((res) => res.json())
       .then((data) => {
 
