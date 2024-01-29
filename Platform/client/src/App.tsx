@@ -1,18 +1,13 @@
 import './App.css';
-import List from './components/list-component/List-component.tsx';
-import TopBanner from './components/top-banner-component/Top-banner-component.tsx';
-import {useState, useEffect, createContext} from 'react';
+import { Routes, Route } from "react-router-dom"
+import Home from './components/home/HomePage/HomePage.tsx';
+import Login from './components/auth/LoginPage/LoginPage.tsx';
+import {useState, useEffect} from 'react';
 
-export const Context = createContext();
 
 function App() {
   const [games, setGames] = useState([]);
   const [steamGames, setSteamGames] = useState([]);
-
-
-
-
-
 
   useEffect(() => {
      fetch(`https://api.rawg.io/api/games?key=${process.env.REACT_APP_RAWG_API_KEY}`)
@@ -31,7 +26,7 @@ function App() {
   }, [steamGames]);
 
   useEffect(() => {
-    fetch(`http://localhost:3001/steamgames`)
+    fetch(`http://localhost:3000/steamgames`)
       .then((res) => res.json())
       .then((data) => {
 
@@ -58,18 +53,17 @@ function App() {
   }, []);
 
 
-
-
-
   return (
-      <div>
-        <TopBanner games={games}/>
-        <h1> My Steam Games</h1>
-        <List games ={steamGames}/>
-        <h1>Games to buy</h1>
-        <List games ={games}/>
-      </div>
-  );
+    <div className="App">
+      <Routes>
+        <Route path="/" element={ <Home games={games} steamGames={steamGames}/> } />
+        <Route path="/login" element={ <Login/> } />
+        <Route path="/registration" element={ <Login/> } />
+      </Routes>
+    </div>
+  )
+
+
 }
 
 export default App;
