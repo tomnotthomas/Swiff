@@ -1,8 +1,47 @@
 .navbar {
-  position:fixed;
   width:100%;
   background-color: black;
-  height: 3.5rem;
-  opacity: 70%;
+  height: 10%;
 }
 
+
+.logo {
+ height:20%;
+ width: 20%;
+}
+.navbar-logo{
+  display:flex;
+  align-items:center;
+}
+
+#swiff {
+  text-decoration: none;
+  color:white;
+}
+
+#swiff:visited{
+  text-decoration: none;
+}
+
+#swiff:link {
+  text-decoration: none;
+}
+
+#swiff:active {
+  text-decoration: none;
+}
+.navbar-container{
+  display:flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items:center;
+}
+
+.register-button{
+  margin-right: 3%;
+  background-color:#05828e;
+  color:white;
+  padding: 1%;
+  border-radius: 5px;
+  border-style: none;
+}

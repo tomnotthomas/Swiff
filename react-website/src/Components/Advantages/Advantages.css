@@ -4,16 +4,17 @@
   width: 100%;
   height: 35rem;
   display: flex;
+  overflow: hidden;
 }
 
 .advantages-left {
-  background-color: white;
-  width:50%;
+  background-color: #e7eaef;
+  width:70%;
 }
 
 .advantages-right {
   background-color:black;
-  width: 50%;
+  width: 30%;
   display: flex;
   flex-direction:column;
   align-items: center;
@@ -28,14 +29,18 @@
   height: 22%;
   border-color: white;
   border-radius: 5px;
-  flex-direction: row;
-  display: flex;
-
-  align-items: center;
-  align-content: center;
+  display:flex;
+  flex-direction:column;
+  justify-content: center;
+  padding:4%;
 }
 
 .text-box {
   color: white;
   
+}
+
+.image {
+  width: 100%;
+  height:auto;
 }
