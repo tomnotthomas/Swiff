@@ -3,10 +3,9 @@ const cors = require('cors');
 const app = express();
 const router = require('./router.js');
 const db = require ('./models/index.js')
-const passport = require('passport')
+const passport = require('./config/passport-config.js')
 const util = require('util')
 const session = require('express-session')
-const SteamStrategy = require('passport-steam');
 const authRouter = require('./routes/auth-routes.js');
 
 require('dotenv').config();
@@ -15,37 +14,6 @@ require('dotenv').config();
 app.use(cors());
 app.use(authRouter)
 app.use(router);
-
-passport.serializeUser(function(user, done) {
-  done(null, user);
-});
-
-passport.deserializeUser(function(obj, done) {
-  done(null, obj);
-});
-
-// Use the SteamStrategy within Passport.
-//   Strategies in passport require a `validate` function, which accept
-//   credentials (in this case, an OpenID identifier and profile), and invoke a
-//   callback with a user object.
-passport.use(new SteamStrategy({
-    returnURL: 'http://localhost:3000/auth/steam/return',
-    realm: 'http://localhost:3000/',
-    apiKey: process.env.REACT_APP_STEAM_API_KEY
-  },
-  function(identifier, profile, done) {
-    // asynchronous verification, for effect...
-    process.nextTick(function () {
-
-      // To keep the example simple, the user's Steam profile is returned to
-      // represent the logged-in user.  In a typical application, you would want
-      // to associate the Steam account with a user record in your database,
-      // and return that user instead.
-      profile.identifier = identifier;
-      return done(null, profile);
-    });
-  }
-));
 
 
 // configure Express
