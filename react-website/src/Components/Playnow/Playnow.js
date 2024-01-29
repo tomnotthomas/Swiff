@@ -4,7 +4,13 @@ import './Playnow.css'
 function Playnow() {
   return (
     <div className='play-now'>
-      Playnow</div>
+      <div className='box-left'>
+        hello
+      </div>
+      <div className='box-right'>
+        hello
+      </div>
+    </div>
   )
 }
 
