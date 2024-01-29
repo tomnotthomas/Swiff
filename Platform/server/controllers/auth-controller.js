@@ -5,4 +5,4 @@
   res.redirect('/');
 }
 
-module.exports = ensureAuthenticated;
+export default ensureAuthenticated;

@@ -1,7 +1,8 @@
-const express = require('express');
+import express from 'express';
+import authRoutes from '../router.js';
+import ensureAuthenticated from '../controllers/auth-controller.js';
+
 const authRouter = express();
-const authRoutes = require ('../router')
-const ensureAuthenticated= require ('../controllers/auth-controller')
 
 authRouter.get('/', function(req, res){
   res.render('index', { user: req.user });
@@ -20,4 +21,4 @@ authRouter.get('/logout', function(req, res){
 authRouter.use('/auth', authRoutes);
 
 
-module.exports= authRouter
+export default authRouter

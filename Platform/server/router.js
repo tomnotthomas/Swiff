@@ -1,11 +1,11 @@
 
 import express from 'express';
 import { Router } from 'express'; // Import Router directly from express
-import passport from 'passport';
-
+import passport from '../server/config/passport-config.js';
+import session from '../server/controllers/session-controller.js'
 const router = Router();
 
-// router.get('/steamgames', session.getSteamGames)
+ router.get('/steamgames', session)
 
 
   // GET /auth/steam
