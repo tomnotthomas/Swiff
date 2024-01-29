@@ -26,7 +26,7 @@ function App() {
   }, [steamGames]);
 
   useEffect(() => {
-    fetch(`http://localhost:3000/steamgames`)
+    fetch(`http://localhost:3001/steamgames`)
       .then((res) => res.json())
       .then((data) => {
 
@@ -56,7 +56,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={ <Home games={games} steamGames={steamGames}/> } />
+        <Route path="/auth/steam/return" element={ <Home games={games} steamGames={steamGames}/> } />
         <Route path="/login" element={ <Login/> } />
         <Route path="/registration" element={ <Login/> } />
       </Routes>

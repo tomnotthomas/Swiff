@@ -1,10 +1,10 @@
 {
   "usesTypeScript": true,
-  "usesStyledComponents": true,
+  "usesStyledComponents": false,
   "testLibrary": "None",
   "component": {
     "default": {
-      "path": "n",
+      "path": "./components",
       "withStyle": true,
       "withTest": false,
       "withStory": false,

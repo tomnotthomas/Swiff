@@ -7,7 +7,7 @@ import './LoginPage.css'
 function Login() {
 
   const handleAuth =() => {
-    window.location.href = 'http://localhost:3000/auth/steam';
+    window.location.href = 'http://localhost:3001/auth/steam';
   };
 
 
@@ -25,7 +25,7 @@ function Login() {
           </button>
           <div id='login-create-account'>
 
-            <p>New to Gamix?</p>
+            <p>New to GoodSpeed?</p>
             <a href='example.com'>create an account</a>
           </div>
           </div>
