@@ -10,13 +10,13 @@ function Advantages() {
         </div>
         <div className='advantages-right'>
           <div className='info-box'>
-            <p>great stuff here. Amazing cloud gaming. Cloudy gaming experience wow.</p>
+            <h2 className='text-box'>Expansive Game Library: Access a wide range of top-tier games on your Mac, bypassing hardware limitations.</h2>
           </div>
           <div className='info-box'>
-            <p>great stuff here. Amazing cloud gaming. Cloudy gaming experience wow.</p>
+            <h2 className='text-box'>Instant Play: Jump straight into games with no downloads or updates, saving time and space.</h2>
           </div>
           <div className='info-box'>
-            <p>great stuff here. Amazing cloud gaming. Cloudy gaming experience wow.</p>
+            <h2 className='text-box'>Effortless and Elegant: Enjoy a gaming experience that matches the Mac's simplicity and efficiency.</h2>
           </div>
           
         </div>
