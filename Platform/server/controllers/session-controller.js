@@ -1,9 +1,11 @@
-require('dotenv').config();
+import fetch from 'node-fetch';
+import dotenv from 'dotenv';
 
-//TODO get the Steam ID from the sign on with Steam
-exports.getSteamGames = async function (req, res) {
+dotenv.config();
+
+// TODO: Get the Steam ID from the sign-on with Steam
+export const getSteamGames = async (req, res) => {
   try {
-    const fetch = (await import('node-fetch')).default;
     const response = await fetch(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${process.env.REACT_APP_STEAM_API_KEY}&steamid=${process.env.REACT_APP_STEAM_ID}&format=json&include_appinfo=true`);
     const data = await response.json();
     res.json(data);
