@@ -6,18 +6,14 @@ const db = require ('./models/index.js')
 const passport = require('passport')
 const util = require('util')
 const session = require('express-session')
-const authRoutes = require('./router.js')
 const SteamStrategy = require('passport-steam');
-
-require('dotenv').config();
-
-
+const authRouter = require('./routes/auth-routes.js');
 
 require('dotenv').config();
 
 // Enable CORS for all routes
 app.use(cors());
-//
+app.use(authRouter)
 app.use(router);
 
 passport.serializeUser(function(user, done) {
@@ -68,31 +64,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static(__dirname + '/../../public'));
 
-app.get('/', function(req, res){
-  res.render('index', { user: req.user });
-});
 
-app.get('/account', ensureAuthenticated, function(req, res){
-  res.render('account', { user: req.user });
-});
-
-app.get('/logout', function(req, res){
-  req.logout();
-  res.redirect('/');
-});
-
-// See views/auth.js for authentication routes
-app.use('/auth', authRoutes);
-
-// Simple route middleware to ensure user is authenticated.
-//   Use this route middleware on any resource that needs to be protected.  If
-//   the request is authenticated (typically via a persistent login session),
-//   the request will proceed.  Otherwise, the user will be redirected to the
-//   login page.
-function ensureAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) { return next(); }
-  res.redirect('/');
-}
 
 
 (async () =>{
