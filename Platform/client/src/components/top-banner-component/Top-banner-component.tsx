@@ -1,5 +1,4 @@
 import './top-banner-component.css'
-import { GiGamepad } from "react-icons/gi";
 
 import { useEffect, useState } from 'react';
 
@@ -31,13 +30,13 @@ function TopBanner({games}) {
 
 
   return (
-    <div id='container'>   
+    <div id='container'>
       <video loop id='top-banner'
         src={ topTrailer.results && topTrailer.results[0].data.max}
         autoPlay
         muted
          />
-      
+
     </div>
   )
 }
