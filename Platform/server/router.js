@@ -1,10 +1,11 @@
 
-const express = require('express');
-const router = express.Router();
-const session = require('./controllers/session-controller.js')
-const passport = require('passport')
+import express from 'express';
+import { Router } from 'express'; // Import Router directly from express
+import passport from 'passport';
 
-router.get('/steamgames', session.getSteamGames)
+const router = Router();
+
+// router.get('/steamgames', session.getSteamGames)
 
 
   // GET /auth/steam
@@ -24,17 +25,14 @@ function(req, res) {
 //   login page.  Otherwise, the primary route function function will be called,
 //   which, in this example, will redirect the user to the home page.
 router.get('/steam/return',
-// Issue #37 - Workaround for Express router module stripping the full url, causing assertion to fail 
+// Issue #37 - Workaround for Express router module stripping the full url, causing assertion to fail
 function(req, res, next) {
     req.url = req.originalUrl;
     next();
-}, 
+},
 passport.authenticate('steam', { failureRedirect: '/' }),
 function(req, res) {
   res.redirect('/');
 });
 
-
-
-
-module.exports =router;
+export default router;

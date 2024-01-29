@@ -1,14 +1,22 @@
-const express = require('express');
-const cors = require('cors');
-const app = express();
-const router = require('./router.js');
-const db = require ('./models/index.js')
-const passport = require('./config/passport-config.js')
-const util = require('util')
-const session = require('express-session')
-const authRouter = require('./routes/auth-routes.js');
 
-require('dotenv').config();
+import express from 'express';
+import cors from 'cors';
+import router from './router.js';
+import passport from 'passport';
+import session from 'express-session';
+import authRoutes from './router.js';
+import SteamStrategy from 'passport-steam';
+import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+
+dotenv.config();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const port = 3000;
+const app = express()
 
 // Enable CORS for all routes
 app.use(cors());
@@ -34,12 +42,8 @@ app.use(express.static(__dirname + '/../../public'));
 
 
 
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
 
-(async () =>{
-  await db.sync()
-    console.log('Created Database')
-    const PORT = process.env.PORT || 3001;
-    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-  console.log('Server created')
-  })();
 
