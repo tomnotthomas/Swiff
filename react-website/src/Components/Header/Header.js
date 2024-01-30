@@ -5,7 +5,8 @@ import headerImg from '../../Media/controller.png'
 function Header() {
   return (
     <div className= 'top-screen'>
-      <img className= 'image' src={headerImg} alt='Game controller' />
+        <h1 className='top-screen-headline'>PLAY HIGH-END GAMES FROM YOUR MAC </h1>
+      <img className= 'image-header' src={headerImg} alt='Game controller' />
    
     </div>
   )

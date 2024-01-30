@@ -1,3 +1,29 @@
 .footer{
   height: 25rem;
+  display:flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items:center;
+  background-color:#e7eaef;
+  border-radius: 20px;
 }
+
+.logo-footer {
+  display:flex;
+  align-items: center;
+  width: 30%;
+  height:auto;
+ }
+
+ .column{
+  margin-left:50px;
+ }
+ 
+ .logo-container {
+  display:flex;
+  align-items: center;
+ }
+
+ .column-item {
+  margin-top: 10%;;
+ }
