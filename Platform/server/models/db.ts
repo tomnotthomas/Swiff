@@ -3,20 +3,14 @@ import mongoose from 'mongoose';
 const DB_NAME = process.env.DATABASE_NAME;
 const DB_PORT = process.env.DATABASE_PORT;
 
-const db = async () => {
+const connectDB = async () => {
   try {
-    const mongoURI = `mongodb://127.0.0.1:${DB_PORT}/${DB_NAME}`;
-
-    await mongoose.connect(mongoURI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    });
-
+    await mongoose.connect(`mongodb://127.0.0.1:${DB_PORT}/${DB_NAME}`)
     console.log('MongoDB Connected');
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error connecting to MongoDB:', error.message);
     process.exit(1);
   }
 };
 
-export default db;
+export default connectDB;
