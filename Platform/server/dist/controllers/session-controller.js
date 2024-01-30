@@ -19,7 +19,12 @@ const getSteamGames = (req, res) => __awaiter(void 0, void 0, void 0, function* 
         console.log(data);
     }
     catch (err) {
-        res.status(500).json({ message: err.message });
+        if (err instanceof Error) {
+            res.status(500).json({ message: err.message });
+        }
+        else {
+            res.status(500).json({ message: 'an unkown error occurred' });
+        }
     }
 });
 export default getSteamGames;

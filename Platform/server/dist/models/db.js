@@ -10,13 +10,9 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 import mongoose from 'mongoose';
 const DB_NAME = process.env.DATABASE_NAME;
 const DB_PORT = process.env.DATABASE_PORT;
-const db = () => __awaiter(void 0, void 0, void 0, function* () {
+const connectDB = () => __awaiter(void 0, void 0, void 0, function* () {
     try {
-        const mongoURI = `mongodb://127.0.0.1:${DB_PORT}/${DB_NAME}`;
-        yield mongoose.connect(mongoURI, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-        });
+        yield mongoose.connect(`mongodb://127.0.0.1:${DB_PORT}/${DB_NAME}`);
         console.log('MongoDB Connected');
     }
     catch (error) {
@@ -24,4 +20,4 @@ const db = () => __awaiter(void 0, void 0, void 0, function* () {
         process.exit(1);
     }
 });
-export default db;
+export default connectDB;

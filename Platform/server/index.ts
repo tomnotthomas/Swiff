@@ -1,9 +1,9 @@
 import express, { Express, Request, Response } from "express";
 import cors from 'cors';
-import router from './router.ts';
+import router from './router.js';
 import dotenv from 'dotenv';
-import connectDB from "./models/db.ts";
-import authRoutes from './router.ts';
+import connectDB from "./models/db.js";
+import authRoutes from './router.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import authRouter from './routes/auth-routes.js';

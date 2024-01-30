@@ -1,8 +1,8 @@
 import { Router } from 'express'; // Import Router directly from express
-import passport from './config/passport-config.ts';
-import session from './controllers/session-controller.ts';
-import User from './models/user.ts';
-import { createUser } from './controllers/userController.ts'
+import passport from './config/passport-config.js';
+import session from './controllers/session-controller.js';
+import User from './models/user.js';
+import { createUser } from './controllers/userController.js'
 const router = Router();
 
 
