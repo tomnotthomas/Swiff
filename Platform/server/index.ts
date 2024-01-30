@@ -13,6 +13,8 @@ import bodyParser from 'body-parser';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+
+
 const port = 3001;
 
 const app = express();
@@ -20,6 +22,7 @@ const app = express();
 dotenv.config();
 
 // Enable CORS for all routes
+
 app.use(cors());
 app.use(authRouter)
 app.use(bodyParser.json());
