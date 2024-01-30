@@ -10,6 +10,7 @@ import authRouter from './routes/auth-routes.js';
 import { configureSessionMiddleware } from './config/passport-config.js';
 import bodyParser from 'body-parser';
 
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 

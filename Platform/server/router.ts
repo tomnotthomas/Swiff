@@ -1,7 +1,7 @@
 import { Router } from 'express'; // Import Router directly from express
 import passport from './config/passport-config.ts';
 import session from './controllers/session-controller.ts';
-import User from './models/user.ts';
+import User from './models/User.ts';
 import { createUser } from './controllers/userController.ts'
 const router = Router();
 
@@ -9,7 +9,7 @@ const router = Router();
 
 router.get('/steamgames', session)
 
-router.post('/registration', createUser)
+router.post('/register', createUser)
 
 
   // GET /auth/steam
