@@ -12,7 +12,7 @@ import { configureSessionMiddleware } from './config/passport-config.js';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const port = process.env.PORT || 3001;
+const port = 3001;
 
 const app = express();
 
