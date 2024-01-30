@@ -1,6 +1,6 @@
 import express from 'express';
-import authRoutes from '../router.js';
-import ensureAuthenticated from '../controllers/auth-controller.js';
+import authRoutes from '../router.ts';
+import ensureAuthenticated from '../controllers/auth-controller.ts';
 
 const authRouter = express();
 

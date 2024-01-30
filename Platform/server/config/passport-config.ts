@@ -1,9 +1,10 @@
 
+import express, { Express } from 'express';
 import passport from 'passport';
 import SteamStrategy from 'passport-steam';
 import session from 'express-session';
 
-export function configureSessionMiddleware(app) {
+export function configureSessionMiddleware(app: Express) {
   // Use the express-session middleware
   app.use(session({
     secret: 'your-secret-key', // Replace with a strong secret key
@@ -40,7 +41,7 @@ function(identifier, profile, done) {
       console.error('Profile is undefined or null');
       return done(new Error('Profile is undefined or null'));
     }
-    
+
     profile.identifier = identifier;
     return done(null, profile);
   });
