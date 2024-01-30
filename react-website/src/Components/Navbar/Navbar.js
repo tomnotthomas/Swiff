@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom';
 import './Navbar.css';
+import logo from '../../Media/logo_for_gaming.png'
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -11,12 +12,12 @@ function Navbar() {
       <nav className='navbar'>
         <div className='navbar-container'>
           <Link to ='/' className='navbar-logo'>
-            GoodSpeed
+            <img className='logo' src={logo} alt='GoodSpeed-logo'></img>
+            <h1 id='swiff'>Swiff!</h1>
           </Link>
-          <div className='menu-icon'>
-            <i className={click ? 'fas fa-times': 'fas fa-bars'} />
-          </div>
+          <button className='register-button'>Register now!</button>
         </div>
+
       </nav>
       </>
   )
