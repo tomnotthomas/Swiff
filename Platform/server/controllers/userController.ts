@@ -1,13 +1,17 @@
-import User from "../models/User";
-import {Request, Response} from 'express';
-import bcrypt from 'bcrypt';
 
-export async function createUser (req: Request, res: Response) {
+import { Request, Response, NextFunction } from 'express';
+import User from "../models/user.js";
+// import {Request, Response} from 'express';
 
+export async function createUser (req: Request, res: Response): Promise<void> {
+  console.log(req.body)
   const {email} = req.body;
   const user = await User.findOne({ email: email });
-  if (user) return res.status(409).send({ error: '409', message: 'User already exists' });
-
+  if (user){
+    res.status(409)
+    .send({ error: '409', message: 'User already exists' });
+    return;
+  }
   try {
     const hashedPassword = await bcrypt.hash(req.body.password, 10);
     const newUser = new User({

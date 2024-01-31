@@ -4,6 +4,7 @@ import passport from 'passport';
 import SteamStrategy from 'passport-steam';
 import session from 'express-session';
 
+
 export function configureSessionMiddleware(app: Express) {
   // Use the express-session middleware
   app.use(session({
@@ -22,7 +23,7 @@ passport.serializeUser(function(user, done) {
   done(null, user);
 });
 
-passport.deserializeUser(function(obj, done) {
+passport.deserializeUser(function(obj:any , done) {
   done(null, obj);
 });
 
@@ -33,9 +34,9 @@ passport.deserializeUser(function(obj, done) {
 passport.use(new SteamStrategy({
   returnURL: 'http://localhost:3000/auth/steam/return',
   realm: 'http://localhost:3000/',
-  apiKey: process.env.REACT_APP_STEAM_API_KEY
+  apiKey: process.env.REACT_APP_STEAM_API_KEY!
 },
-function(identifier, profile, done) {
+function(identifier, profile: any, done) {
   process.nextTick(function () {
     if (!profile) {
       console.error('Profile is undefined or null');

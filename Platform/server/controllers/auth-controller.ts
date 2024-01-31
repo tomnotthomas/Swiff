@@ -1,6 +1,7 @@
+import { Request, Response, NextFunction } from 'express';
 
 
- function ensureAuthenticated(req, res, next) {
+ function ensureAuthenticated(req: Request, res: Response, next: NextFunction) {
   if (req.isAuthenticated()) { return next(); }
   res.redirect('/');
 }

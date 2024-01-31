@@ -1,9 +1,9 @@
 import express, { Express, Request, Response } from "express";
 import cors from 'cors';
-import router from './router.ts';
+import router from './router.js';
 import dotenv from 'dotenv';
-import connectDB from "./models/db.ts";
-import authRoutes from './router.ts';
+import connectDB from "./models/db.js";
+import authRoutes from './router.js';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import authRouter from './routes/auth-routes.js';
@@ -14,6 +14,8 @@ import bodyParser from 'body-parser';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+
+
 const port = 3001;
 
 const app = express();
@@ -21,6 +23,7 @@ const app = express();
 dotenv.config();
 
 // Enable CORS for all routes
+
 app.use(cors());
 app.use(authRouter)
 app.use(bodyParser.json());
