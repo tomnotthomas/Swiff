@@ -1,7 +1,6 @@
 import { Router } from 'express'; // Import Router directly from express
 import passport from './config/passport-config.js';
 import session from './controllers/session-controller.js';
-import User from './models/user.js';
 import { createUser, authUser } from './controllers/userController.js'
 const router = Router();
 

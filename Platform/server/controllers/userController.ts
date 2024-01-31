@@ -1,6 +1,6 @@
 import bcrypt from 'bcrypt';
 import { Request, Response, NextFunction } from 'express';
-import User from "../models/user.js";
+import User from "../models/User.js";
 import jwt from 'jsonwebtoken';
 
 export async function createUser (req: Request, res: Response): Promise<void> {

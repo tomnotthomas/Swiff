@@ -3,7 +3,8 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
     email: {
         type: String,
-        required: true,
+        required: [true, "Please provide an Email!"],
+        unique: [true, "Email Exist"],
     },
     userName: {
         type: String,
@@ -11,7 +12,8 @@ const userSchema = new Schema({
     },
     password: {
         type: String,
-        required: false,
+        required: [true, "Please provide a password!"],
+        unique: false,
     },
     games: {
         type: Array,
