@@ -1,10 +1,11 @@
 import { Router } from 'express'; // Import Router directly from express
 import passport from './config/passport-config.js';
 import session from './controllers/session-controller.js';
-import { createUser } from './controllers/userController.js';
+import { createUser, authUser } from './controllers/userController.js';
 const router = Router();
 router.get('/steamgames', session);
-router.post('/registration', createUser);
+router.post('/register', createUser);
+router.post('/auth', authUser);
 // GET /auth/steam
 //   Use passport.authenticate() as route middleware to authenticate the
 //   request.  The first step in Steam authentication will involve redirecting

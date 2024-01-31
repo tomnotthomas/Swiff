@@ -1,6 +1,7 @@
 import './App.css';
 import { Routes, Route } from "react-router-dom"
 import Home from './components/home/HomePage/HomePage.tsx';
+import SteamLogin from './components/auth/LoginPage/SteamLoginPage.tsx';
 import Login from './components/auth/LoginPage/LoginPage.tsx';
 import RegistrationPage from './components/auth/RegistrationPage/RegistrationPage.tsx';
 import {useState, useEffect} from 'react';
@@ -9,6 +10,9 @@ import {useState, useEffect} from 'react';
 function App() {
   const [games, setGames] = useState([]);
   const [steamGames, setSteamGames] = useState([]);
+  const [loggedIn, setLoggedIn] = useState(false)
+  const [email, setEmail] = useState("")
+
 
   useEffect(() => {
      fetch(`https://api.rawg.io/api/games?key=${process.env.REACT_APP_RAWG_API_KEY}`)
@@ -59,6 +63,7 @@ function App() {
       <Routes>
         <Route path="/auth/steam/return" element={ <Home games={games} steamGames={steamGames}/> } />
         <Route path="/login" element={ <Login/> } />
+        <Route path="/steam-login" element={ <SteamLogin/> } />
         <Route path="/register" element={ <RegistrationPage/> } />
       </Routes>
     </div>
