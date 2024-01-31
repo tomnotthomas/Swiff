@@ -9,7 +9,7 @@ const router = Router();
 
 router.get('/steamgames', session)
 
-router.post('/registration', createUser)
+router.post('/register', createUser)
 
 
   // GET /auth/steam

@@ -1,3 +1,4 @@
+
 import { Request, Response, NextFunction } from 'express';
 import User from "../models/user.js";
 // import {Request, Response} from 'express';
@@ -12,12 +13,15 @@ export async function createUser (req: Request, res: Response): Promise<void> {
     return;
   }
   try {
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
     const newUser = new User({
-      ...req.body,
+      email: email,
+      password: hashedPassword,
     });
     const savedUser = await newUser.save();
     res.status(201).send(savedUser);
+    console.log('New user created', savedUser)
   } catch (error) {
-    res.status(400).send({ error, message: 'Could not save image' });
+    res.status(400).send({ error, message: 'Could not save user' });
   }
 };
