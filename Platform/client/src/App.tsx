@@ -2,6 +2,7 @@ import './App.css';
 import { Routes, Route } from "react-router-dom"
 import Home from './components/home/HomePage/HomePage.tsx';
 import Login from './components/auth/LoginPage/LoginPage.tsx';
+import RegistrationPage from './components/auth/RegistrationPage/RegistrationPage.tsx';
 import {useState, useEffect} from 'react';
 
 
@@ -58,7 +59,7 @@ function App() {
       <Routes>
         <Route path="/auth/steam/return" element={ <Home games={games} steamGames={steamGames}/> } />
         <Route path="/login" element={ <Login/> } />
-        <Route path="/registration" element={ <Login/> } />
+        <Route path="/register" element={ <RegistrationPage/> } />
       </Routes>
     </div>
   )

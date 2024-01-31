@@ -4,11 +4,13 @@
   "testLibrary": "None",
   "component": {
     "default": {
-      "path": "./components",
+      "path": "./src/components",
       "withStyle": true,
       "withTest": false,
       "withStory": false,
       "withLazy": false
     }
-  }
+  },
+  "usesCssModule": true,
+  "cssPreprocessor": "css"
 }
