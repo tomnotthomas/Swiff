@@ -1,16 +1,17 @@
 /**
  * TODO(developer): Uncomment and replace these variables before running the sample.
  */
-// const projectId = 'YOUR_PROJECT_ID';
-import * as Compute from '@google-cloud/compute'
+ const projectId = 'api-project-362391334008';
+
+const compute = require('@google-cloud/compute');
+
 // List all instances in the specified project.
 async function listAllInstances() {
-  const instancesClient = new Compute.InstancesClient();
-
+  const instancesClient = new compute.InstancesClient();
 
   //Use the `maxResults` parameter to limit the number of results that the API returns per response page.
   const aggListRequest = instancesClient.aggregatedListAsync({
-    project: '',
+    project: projectId,
     maxResults: 5,
   });
 

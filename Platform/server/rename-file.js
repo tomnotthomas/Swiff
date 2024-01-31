@@ -9,7 +9,7 @@ try {
   const sourceDir = path.join(scriptDir, './dist'); // Change to your actual output directory
 
   // Specify the file you want to rename (including the path)
-  const targetFileName = 'cloud-vm-creator/cloud-vm-creator.js'; // Change to your target file
+  const targetFileName = 'google/cloud-vm-creator.js'; // Change to your target file
 
   // Generate the new filename with the .cjs extension
   const newFileName = path.join(sourceDir, targetFileName).replace('.js', '.cjs');
