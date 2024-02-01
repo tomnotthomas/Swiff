@@ -18,6 +18,7 @@ export async function createUser (req: Request, res: Response): Promise<void> {
     const newUser = new User({
       email: email,
       password: hashedPassword,
+      zone: req.body.zone,
     });
     const savedUser = await newUser.save();
     res.status(201).send(savedUser);

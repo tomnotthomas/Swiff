@@ -17,6 +17,10 @@ const userSchema = new Schema({
     required: [true, "Please provide a password!"],
     unique: false,
   },
+  zone: {
+    type: String,
+    required: true,
+  },
   games: {
     type: Array,
     required: false,

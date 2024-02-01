@@ -4,7 +4,7 @@ import { faSteamSquare } from '@fortawesome/free-brands-svg-icons';
 import './SteamLoginPage.css'
 
 
-function Login() {
+function SteamLogin() {
 
   const handleAuth =() => {
     window.location.href = 'http://localhost:3001/auth/steam';
@@ -15,18 +15,18 @@ function Login() {
     <div id='backbox'>
 
       <div id='box'>
-      <h2>Login</h2>
+      <h2>One last step</h2>
         <div id='steambutton'>
           <button onClick={handleAuth} className="steambutton">
-            <span>Login With Steam</span>
+            <span>Connect Steam account</span>
             <div className="icon">
               <FontAwesomeIcon icon={faSteamSquare} className="fa fa-steam-square" />
 	          </div>
           </button>
           <div id='login-create-account'>
 
-            <p>New to GoodSpeed?</p>
-            <a href='example.com'>create an account</a>
+            <p>Connect Steam account later?</p>
+            <a href='./'>Skip</a>
           </div>
           </div>
         </div>
@@ -34,4 +34,4 @@ function Login() {
   )
 }
 
-export default Login
+export default SteamLogin
