@@ -8,9 +8,10 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+const { instanceConfigurator } = require("./instance-resource-template.cjs");
 const dotenv = require('dotenv').config({ path: __dirname + '/../../../.env' });
-console.log(process.env.GOOGLE_PROJ_ID);
 const GOOGLE_CLOUD_PROJECT_ID = process.env.GOOGLE_PROJ_ID;
+const GOOGLE_CLOUD_ZONE = process.env.GOOGLE_PROJ_ZONE;
 function main(instanceResource, project, zone) {
     // Imports the Compute library
     const { InstancesClient } = require('@google-cloud/compute').v1;
@@ -32,34 +33,6 @@ function main(instanceResource, project, zone) {
     callInsert();
     // [END compute_v1_generated_Instances_Insert_async]
 }
-/**
- *  The body resource for this request
- */
-//Check out the structure of an instance resource here:https://cloud.google.com/compute/docs/reference/rest/v1/instances
-const instanceResource = {
-    "name": "free-tier-instance",
-    "machineType": `projects/${GOOGLE_CLOUD_PROJECT_ID}/zones/us-west1-a/machineTypes/f1-micro`,
-    "disks": [
-        {
-            "boot": true,
-            "initializeParams": {
-                "sourceImage": "projects/debian-cloud/global/images/family/debian-10",
-                "diskSizeGb": "10"
-            }
-        }
-    ],
-    "networkInterfaces": [
-        {
-            "network": "global/networks/default",
-            "accessConfigs": [
-                {
-                    "name": "External NAT",
-                    "type": "ONE_TO_ONE_NAT"
-                }
-            ]
-        }
-    ]
-};
 /**
  *  Project ID for this request.
  */
@@ -88,4 +61,5 @@ process.on('unhandledRejection', err => {
         console.error('An unknown error occurred');
     }
 });
-main(instanceResource, project, zone);
+const configuredResource = instanceConfigurator(GOOGLE_CLOUD_ZONE, "simplevmname1");
+main(configuredResource, project, zone);
