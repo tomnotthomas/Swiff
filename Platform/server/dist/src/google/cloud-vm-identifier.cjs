@@ -15,15 +15,15 @@ var __asyncValues = (this && this.__asyncValues) || function (o) {
     function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
     function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
 };
-/**
- * TODO(developer): Uncomment and replace these variables before running the sample.
- */
-const projectId = 'api-project-362391334008';
+Object.defineProperty(exports, "__esModule", { value: true });
+const dotenv = require('dotenv').config({ path: __dirname + '/../../../.env' });
 const compute = require('@google-cloud/compute');
+const projectId = process.env.GOOGLE_PROJ_ID;
 // List all instances in the specified project.
 function listAllInstances() {
     var _a, e_1, _b, _c;
     return __awaiter(this, void 0, void 0, function* () {
+        console.log(projectId);
         const instancesClient = new compute.InstancesClient();
         //Use the `maxResults` parameter to limit the number of results that the API returns per response page.
         const aggListRequest = instancesClient.aggregatedListAsync({

@@ -1,3 +1,4 @@
+
 import fs from 'fs';
 import path from 'path';
 
@@ -6,25 +7,22 @@ try {
   const scriptDir = path.dirname(new URL(import.meta.url).pathname);
 
   // Define the source directory
-  const sourceDir = path.join(scriptDir, './dist'); // Change to your actual output directory
+  const sourceDir = path.join(scriptDir, './dist/src/google'); 
 
-  // Specify the file you want to rename (including the path)
-  const targetFileName = 'google/cloud-vm-creator.js'; // Change to your target file
+  // Read files from the source directory
+  const files = fs.readdirSync(sourceDir);
 
-  // Generate the new filename with the .cjs extension
-  const newFileName = path.join(sourceDir, targetFileName).replace('.js', '.cjs');
-  const originalFilePath = path.join(sourceDir, targetFileName);
+  // Filter out .js files and rename them to .cjs
+  files.forEach(file => {
+    if (path.extname(file) === '.js') {
+      const originalFilePath = path.join(sourceDir, file);
+      const newFilePath = originalFilePath.replace('.js', '.cjs');
 
-  // Check if the original file exists
-  if (!fs.existsSync(originalFilePath)) {
-    console.log(`${originalFilePath} does not exist.`);
-  } else {
-    // Rename the file
-    fs.renameSync(originalFilePath, newFileName);
-    console.log(`${targetFileName} has been renamed to ${newFileName}`);
+      fs.renameSync(originalFilePath, newFilePath);
+      console.log(`${originalFilePath} has been renamed to ${newFilePath}`);
+    }
+  });
 
-
-  }
 } catch (error) {
   console.error('Error in rename-file script:', error);
 }
