@@ -68,3 +68,19 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+## How to Call the Protected Endpoint
+
+// In your component add:
+import Cookies from "universal-cookie";
+const cookies = new Cookies();
+
+// Get the token generated on login:
+const token = cookies.get("TOKEN");
+
+// Add the follwoing header to your request:
+headers: {
+        Authorization: `Bearer ${token}`,
+      },
+

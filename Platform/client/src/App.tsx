@@ -5,6 +5,8 @@ import SteamLogin from './components/auth/LoginPage/SteamLoginPage.tsx';
 import Login from './components/auth/LoginPage/LoginPage.tsx';
 import RegistrationPage from './components/auth/RegistrationPage/RegistrationPage.tsx';
 import {useState, useEffect} from 'react';
+import ProtectedRoutes from './components/auth/ProtectedRoutes.tsx';
+
 
 
 function App() {
@@ -61,6 +63,10 @@ function App() {
   return (
     <div className="App">
       <Routes>
+        <Route element={<ProtectedRoutes />}>
+          <Route element={<Home games={games} steamGames={steamGames}/> } path="/" exact/>
+        </Route>
+
         <Route path="/auth/steam/return" element={ <Home games={games} steamGames={steamGames}/> } />
         <Route path="/login" element={ <Login/> } />
         <Route path="/steam-login" element={ <SteamLogin/> } />

@@ -2,6 +2,7 @@ import bcrypt from 'bcrypt';
 import { Request, Response, NextFunction } from 'express';
 import User from "../models/User.js";
 import jwt from 'jsonwebtoken';
+const jwtSecret = process.env.JWT_SECRET || "DEFAULT_SECRET";
 
 export async function createUser (req: Request, res: Response): Promise<void> {
   console.log(req.body)
@@ -58,7 +59,7 @@ export async function authUser (req: Request, res: Response) {
             userId: user._id,
             userEmail: user.email,
           },
-          "RANDOM-TOKEN",
+          jwtSecret,
           { expiresIn: "24h" }
         );
 
