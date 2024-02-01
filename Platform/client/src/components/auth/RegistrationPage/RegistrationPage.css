@@ -1,0 +1,83 @@
+.registration-form{
+  position:absolute;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content: center;
+  align-content: center;
+  width:50vh;
+  height:70vb;
+  border-radius:10px;
+  background-color:white;
+
+}
+
+.container-registration{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height:100vb;
+  }
+
+.register-input-field {
+  position:relative;
+  height: 6vb;
+  width: 43vh;
+  border-style:none;
+  background-color:#e0e0e0;
+  border-radius: 5px;;
+  font-size: medium;
+}
+
+.register-button{
+  width: 43vb;
+  height: 6vb;
+  border-style: none;
+  background-color: #05828e;
+  color: white;
+  font-size:large;
+  border-radius: 5px;
+  margin-top: 10%;
+  display:flex;
+  align-items:center;
+  align-content:center;
+  justify-content:center;
+}
+
+.registration-content{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-content: space-between;
+}
+
+.registration-form-label{
+  font-size: large;
+}
+
+
+.icon-register{
+  font-size: x-large;
+  margin-right:2%;
+  color:#05828e;
+}
+
+.input-description{
+  margin-top:3%;
+  margin-bottom: 3%;
+  display: flex;
+  flex-direction: row;
+  align-items:center;
+}
+
+.registration-note-to-login{
+  font-size:x-small;
+  margin-left:1%;
+
+}
+
+#registration-note{
+  display: flex;
+
+}

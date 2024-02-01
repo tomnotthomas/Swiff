@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import './LoginPage.css';
 import Cookies from 'universal-cookie';
+import { Link } from 'react-router-dom';
 
 const cookies = new Cookies();
 
@@ -74,6 +75,7 @@ const Login: React.FC = () => {
 
 
     return <div className={"mainContainer"}>
+        <div className ='login-form'>
         <div className={"titleContainer"}>
             <div>Login</div>
         </div>
@@ -109,7 +111,13 @@ const Login: React.FC = () => {
         ) : (
           <p className="text-danger">You Are Not Logged in</p>
         )}
+
+        <div id='login-note'>
+            <p className='login-note-to-register'>Don't have an account yet? Then go to the </p><Link className='login-note-to-register' to ='/register'> Register page</Link>
+        </div>
+        </div>
     </div>
+    
 }
 
 export default Login

@@ -8,7 +8,7 @@ export async function auth (req: any, res: any, next: any): Promise<void> {
     const token = await req.headers.authorization.split(" ")[1];
 
     //check if the token matches the supposed origin
-    const decodedToken = await jwt.verify(token, jwtSecret);
+    const decodedToken = await jwt.verify(token, jwtSecret!);
 
     // retrieve the user details of the logged in user
     const user = await decodedToken;
