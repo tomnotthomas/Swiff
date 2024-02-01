@@ -7,6 +7,7 @@ dotenv.config();
 const DB_NAME = process.env.DATABASE_NAME;
 const DB_PORT = process.env.DATABASE_PORT;
 
+
 const connectDB = async () => {
   try {
     await mongoose.connect(`mongodb://127.0.0.1:${DB_PORT}/${DB_NAME}`)

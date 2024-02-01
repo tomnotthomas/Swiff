@@ -109,14 +109,14 @@
     "esm": true /*                                          Enabling ESM for ts-node. */
   },
   "exclude": [
-    "google/**/*", 
+    "src/google/**/*", 
     "./coverage",
     "./dist",
     "__tests__",
     "jest.config.cjs"
   ],
   "include": [
-    "**/*",
+    "src/**/*",
     "tests/**/*"
   ],
 

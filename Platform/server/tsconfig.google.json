@@ -110,6 +110,6 @@
   },
 
   "include": [
-    "google/**/*" 
+    "src/google/**/*" 
   ]
 }
