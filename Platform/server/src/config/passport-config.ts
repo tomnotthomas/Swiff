@@ -1,4 +1,3 @@
-
 import express, { Express } from 'express';
 import passport from 'passport';
 import SteamStrategy from 'passport-steam';
