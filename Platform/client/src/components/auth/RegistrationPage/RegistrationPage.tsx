@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
+import { zones } from "./zones.tsx";
 
 export default function RegistrationPage() {
   // initial state
@@ -10,6 +11,7 @@ export default function RegistrationPage() {
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
   const [passwordConfirmError, setPasswordConfirmError] = useState("");
+  const [selectedCity, setSelectedCity] = useState("");
 
 
 
@@ -60,6 +62,7 @@ export default function RegistrationPage() {
         body: JSON.stringify({
           email,
           password,
+          zone: selectedCity,
         }),
       });
 
@@ -94,6 +97,24 @@ export default function RegistrationPage() {
             placeholder="Enter email"
           />
           <label className="errorLabel">{emailError}</label>
+        </Form.Group>
+
+        {/* zone */}
+        <Form.Group controlId="formBasicCity">
+          <Form.Label>Nearest city</Form.Label>
+          <Form.Control
+            as="select"
+            name="city"
+            value={selectedCity}
+            onChange={(e) => setSelectedCity(e.target.value)}
+          >
+            <option value="">Select a city</option>
+            {zones.map((city, index) => (
+              <option key={index} value={city}>
+                {city}
+              </option>
+            ))}
+          </Form.Control>
         </Form.Group>
 
         {/* password */}

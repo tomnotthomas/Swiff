@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, Navigate } from "react-router-dom"
 import Home from './components/home/HomePage/HomePage.tsx';
 import SteamLogin from './components/auth/LoginPage/SteamLoginPage.tsx';
 import Login from './components/auth/LoginPage/LoginPage.tsx';
@@ -67,7 +67,7 @@ function App() {
           <Route element={<Home games={games} steamGames={steamGames}/> } path="/" exact/>
         </Route>
 
-        <Route path="/auth/steam/return" element={ <Home games={games} steamGames={steamGames}/> } />
+        <Route path="/auth/steam/return" element={<Navigate to="/" replace={true} />} />
         <Route path="/login" element={ <Login/> } />
         <Route path="/steam-login" element={ <SteamLogin/> } />
         <Route path="/register" element={ <RegistrationPage/> } />
