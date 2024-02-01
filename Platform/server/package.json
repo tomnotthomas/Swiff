@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc --project tsconfig.prod.json && tsc --project tsconfig.google.json && node rename-file.js",
     "start": "node dist/src/index.js",
-    "dev": "tsx watch index.ts"
+    "dev": "tsx watch src/index.ts"
   },
   "author": "",
   "license": "ISC",
