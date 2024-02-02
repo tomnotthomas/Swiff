@@ -7,7 +7,7 @@
   margin-bottom: 1.9rem;
   object-fit: cover;
   z-index: 3;
-  filter: brightness(75%);
+  filter: brightness(90%);
   display: block;
   transition: transform 1s ease;
 
@@ -23,7 +23,7 @@
   border-bottom-right-radius:0%;
   object-fit: cover;
   z-index: 3;
-  filter: brightness(75%);
+  filter: brightness(100%);
   display: block;
 
 }
