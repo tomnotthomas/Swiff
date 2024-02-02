@@ -6,6 +6,7 @@ import Login from './components/auth/LoginPage/LoginPage.tsx';
 import RegistrationPage from './components/auth/RegistrationPage/RegistrationPage.tsx';
 import {useState, useEffect} from 'react';
 import ProtectedRoutes from './components/auth/ProtectedRoutes.tsx';
+import Preloader from './components/preloader/preloader.tsx';
 
 
 
@@ -31,6 +32,9 @@ function App() {
   useEffect(() => {
     console.log("steamGames updated:", steamGames);
   }, [steamGames]);
+
+
+  
 
   useEffect(() => {
     fetch(`http://localhost:3001/steamgames`)
@@ -58,6 +62,14 @@ function App() {
         console.log(err.message);
       });
   }, []);
+
+  const [loading, setLoading] = useState(true)
+    useEffect(() => {
+        setTimeout(() => setLoading(false), 3300)
+    }, [])
+    if (loading) {
+        return <Preloader />
+    }
 
 
   return (
