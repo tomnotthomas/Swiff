@@ -115,11 +115,14 @@
 	font-family: sans-serif;
 	backface-visibility: hidden;
 	transform-style: preserve-3d;
+  background-color: #05828e;
+  
 }
 .btn .content .back p {
 	font-size: .9rem;
 	/* text-shadow: 2px 1px 2px rgba(0, 0, 0, .5); */
 	font-weight: 600;
+  color:white;
 }
 .btn .content .back .border {
 	content: '';
