@@ -91,6 +91,7 @@ export default function RegistrationPage() {
 
   return (
     <div className='container-registration'>
+      <div id='background'></div>
     <div className ='registration-form'>
       <div className='registration-content'>
       <h2>Register</h2>

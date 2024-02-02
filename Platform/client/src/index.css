@@ -20,20 +20,24 @@ body, #root {
   width: 100%;
   font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   z-index: 0;
-  background-image: var(--gradient);
-  background-size: 200% 200%;
-  animation: bg-animation 10s infinite alternate;
-  }
-
-  @keyframes bg-animation {
-    0% {
-        background-position: 0% 50%;
-    }
-    
-    100% {
-        background-position: 100% 50%;
-    }
+  background: linear-gradient(-45deg, #585e68, #99a5b6, #c3d0e4, #f1f6ff);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
 }
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 
 p{
   color:#484e56;
