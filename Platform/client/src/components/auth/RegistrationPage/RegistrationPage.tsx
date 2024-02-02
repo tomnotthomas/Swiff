@@ -1,6 +1,16 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { zones } from "./zones.tsx";
+import "./RegistrationPage.css"
+import { Link } from 'react-router-dom';
+
+import { MdOutlineEmail } from "react-icons/md";
+import { FaCity } from "react-icons/fa";
+import { RiLockPasswordLine } from "react-icons/ri";
+import { FaRepeat } from "react-icons/fa6";
+import { MdStart } from "react-icons/md";
+
+
 
 export default function RegistrationPage() {
   // initial state
@@ -80,13 +90,20 @@ export default function RegistrationPage() {
   };
 
   return (
-    <>
+    <div className='container-registration'>
+    <div className ='registration-form'>
+      <div className='registration-content'>
       <h2>Register</h2>
       <Form onSubmit={(e) => handleSubmit(e)}>
         {/* email */}
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+        <div className='input-description'>
+          <MdOutlineEmail className='icon-register' />
+          <Form.Label className='registration-form-label'>
+            Email address<br></br></Form.Label>
+          </div>
           <Form.Control
+            className='register-input-field'
             type="email"
             name="email"
             value={email}
@@ -96,19 +113,24 @@ export default function RegistrationPage() {
             }}
             placeholder="Enter email"
           />
-          <label className="errorLabel">{emailError}</label>
+          <label className="errorLabel"><br></br>{emailError}</label>
         </Form.Group>
 
         {/* zone */}
         <Form.Group controlId="formBasicCity">
-          <Form.Label>Nearest city</Form.Label>
+        <div className='input-description'>
+        <FaCity className='icon-register' />
+          <Form.Label className='registration-form-label'>
+            Nearest city<br></br></Form.Label>
+            </div>
           <Form.Control
+            className='register-input-field'
             as="select"
             name="city"
             value={selectedCity}
             onChange={(e) => setSelectedCity(e.target.value)}
           >
-            <option value="">Select a city</option>
+            <option value="">Select a city<br></br></option>
             {zones.map((city, index) => (
               <option key={index} value={city}>
                 {city}
@@ -118,9 +140,14 @@ export default function RegistrationPage() {
         </Form.Group>
 
         {/* password */}
-        <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+        <Form.Group controlId="formBasicPassword">     
+        <div className='input-description'>
+        <RiLockPasswordLine className='icon-register' />
+          <Form.Label className='registration-form-label'>
+            Password<br></br></Form.Label>
+            </div>
           <Form.Control
+            className='register-input-field'
             type="password"
             name="password"
             value={password}
@@ -130,13 +157,20 @@ export default function RegistrationPage() {
             }}
             placeholder="Password"
           />
-          <label className="errorLabel">{passwordError}</label>
+          <label className="errorLabel"><br></br>{passwordError}</label>
         </Form.Group>
 
         {/* confirm password */}
         <Form.Group controlId="formBasicPassword">
-          <Form.Label>Confirm Password</Form.Label>
+        <div className='input-description'>
+        <FaRepeat className='icon-register' />
+
+          <Form.Label className='registration-form-label'>
+            Confirm Password<br></br></Form.Label>
+        </div>
+
           <Form.Control
+            className='register-input-field'
             type="password"
             name="passwordConfirm"
             value={passwordConfirm}
@@ -146,16 +180,21 @@ export default function RegistrationPage() {
             }}
             placeholder="Confirm Password"
           />
-          <label className="errorLabel">{passwordConfirmError}</label>
+          <label className="errorLabel"><br></br>{passwordConfirmError}</label>
         </Form.Group>
-
         {/* submit button */}
+        
         <Button
+
+        className = 'register-button'
           variant="primary"
           type="submit"
           onClick={(e) => handleSubmit(e)}
+          
         >
           Register
+          <MdStart />
+
         </Button>
 
         {/* display success message */}
@@ -164,8 +203,13 @@ export default function RegistrationPage() {
         ) : (
           <p className="text-danger">Please provide your details</p>
         )}
+        <div id='registration-note'>
+        <p className='registration-note-to-login'>Already have an account? Then go to the </p><Link className='registration-note-to-login' to ='/login'> login page</Link>
+        </div>
       </Form>
-    </>
+    </div>
+    </div>
+    </div>
   );
 }
 

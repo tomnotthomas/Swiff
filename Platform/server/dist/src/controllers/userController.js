@@ -1,6 +1,7 @@
 import bcrypt from 'bcrypt';
 import User from "../models/User.js";
 import jwt from 'jsonwebtoken';
+const jwtSecret = process.env.JWT_SECRET || "DEFAULT_SECRET";
 export async function createUser(req, res) {
     console.log(req.body);
     const { email } = req.body;
@@ -50,7 +51,7 @@ export async function authUser(req, res) {
             const token = jwt.sign({
                 userId: user._id,
                 userEmail: user.email,
-            }, "RANDOM-TOKEN", { expiresIn: "24h" });
+            }, jwtSecret, { expiresIn: "24h" });
             //   return success response
             res.status(200).send({
                 message: "Login Successful",
