@@ -3,6 +3,9 @@ import { useNavigate } from "react-router-dom";
 import './LoginPage.css';
 import Cookies from 'universal-cookie';
 import { Link } from 'react-router-dom';
+import { MdOutlineEmail } from "react-icons/md";
+import { RiLockPasswordLine } from "react-icons/ri";
+
 
 const cookies = new Cookies();
 
@@ -75,12 +78,17 @@ const Login: React.FC = () => {
 
 
     return <div className={"mainContainer"}>
+        <div id='background'></div>
         <div className ='login-form'>
         <div className={"titleContainer"}>
-            <div>Login</div>
         </div>
-        <br />
         <div className={"inputContainer"}>
+        <h1>Login</h1>
+        <br />
+            <div className="input-description-login">
+            <MdOutlineEmail className='login-form-icon'/>
+            <p className='input-description-login-text'>E-mail</p>
+            </div>
             <input
                 value={email}
                 placeholder="Enter your email here"
@@ -90,6 +98,10 @@ const Login: React.FC = () => {
         </div>
         <br />
         <div className={"inputContainer"}>
+        <div className="input-description-login">
+            <RiLockPasswordLine className='login-form-icon'/>
+            <p className='input-description-login-text'>Password</p>
+        </div>
             <input
                 value={password}
                 type="password"
@@ -101,6 +113,7 @@ const Login: React.FC = () => {
         <br />
         <div className={"inputContainer"}>
             <input
+            
                 className={"inputButton"}
                 type="button"
                 onClick={onButtonClick}
