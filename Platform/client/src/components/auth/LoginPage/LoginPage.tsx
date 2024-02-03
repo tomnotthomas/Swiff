@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import './LoginPage.css';
 import Cookies from 'universal-cookie';
 import { Link } from 'react-router-dom';
@@ -29,7 +28,7 @@ const Login: React.FC = () => {
             return
         }
 
-        if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+        if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
             setEmailError("Please enter a valid email")
             return
         }
@@ -66,7 +65,7 @@ const Login: React.FC = () => {
             cookies.set("TOKEN", data.token, {
                 path: "/",
               });
-            window.location.href = "/"
+            window.location.href = "/steam-login"
 
         } else {
             console.error(`Error: ${response.status} - ${response.statusText}`);
@@ -113,7 +112,7 @@ const Login: React.FC = () => {
         <br />
         <div className={"inputContainer"}>
             <input
-            
+
                 className={"inputButton"}
                 type="button"
                 onClick={onButtonClick}
@@ -130,7 +129,7 @@ const Login: React.FC = () => {
         </div>
         </div>
     </div>
-    
+
 }
 
 export default Login

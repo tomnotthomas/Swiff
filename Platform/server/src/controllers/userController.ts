@@ -33,6 +33,7 @@ export async function createUser (req: Request, res: Response): Promise<void> {
 
 export async function authUser (req: Request, res: Response) {
 
+
   // check if email exists
   User.findOne({ email: req.body.email })
 
