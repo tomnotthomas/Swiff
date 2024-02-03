@@ -24,6 +24,13 @@ const Header = () => {
     <div className="header-container">
       <div className="header-button-container">
         <div className="container-header">
+					<div className= "steam-button">
+
+						<button className="steam-button-1">Connect to Steam</button>
+						</div>
+
+
+
         	<div className="btn btn--1">
         		<div className="content">
         			<div className="front">
