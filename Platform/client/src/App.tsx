@@ -13,15 +13,12 @@ import Preloader from './components/preloader/preloader.tsx';
 function App() {
   const [games, setGames] = useState([]);
   const [steamGames, setSteamGames] = useState([]);
-  const [loggedIn, setLoggedIn] = useState(false)
-  const [email, setEmail] = useState("")
-
 
   useEffect(() => {
      fetch(`https://api.rawg.io/api/games?key=${process.env.REACT_APP_RAWG_API_KEY}`)
         .then((res) => res.json())
         .then((data) => {
-           console.log({data});
+           console.log('Data from RAWG API loaded:', {data});
            setGames(data);
         })
         .catch((err) => {
@@ -29,9 +26,6 @@ function App() {
         });
   }, []);
 
-  useEffect(() => {
-    console.log("steamGames updated:", steamGames);
-  }, [steamGames]);
 
 
   
@@ -54,7 +48,7 @@ function App() {
               return { ...rawgData };
             })
         )).then(results => {
-          console.log({results})
+          console.log('User-owned Steam games loaded:', {results})
           setSteamGames({results});
         });
       })
@@ -76,7 +70,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route element={<ProtectedRoutes />}>
-          <Route element={<Home games={games} steamGames={steamGames}/> } path="/" exact/>
+          <Route path="/" element={<Home games={games} steamGames={steamGames}/> } />
         </Route>
 
         <Route path="/auth/steam/return" element={<Navigate to="/" replace={true} />} />
