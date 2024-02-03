@@ -40,8 +40,6 @@
 .container-header {
 	background: #9ba8b8;
   margin-top:2%;
-	height: 50px;
-	width: 150px;
 	position: absolute;
 	top: 50%;
 	left: 85%;
@@ -51,13 +49,14 @@
 	align-items: center;
 	justify-content: space-around;
 	border-radius: 100px;
-  padding-top:2%;
-  padding-bottom:2%;
+	padding-left:0.5%;
+	padding-right:0%;
 }
 .btn {
 
 	cursor: pointer;
 	border-radius: 50%;
+	margin-right:5px;
 }
 
 .btn .content {
@@ -154,3 +153,26 @@
 .header-icon{
   font-size:x-large;
 }
+
+
+.steam-button-1{
+	border-radius: 20px;
+	margin-right:10px;
+	margin-top: 4%;
+	margin-bottom: 4%;
+	width: 15vb;
+	height: 5vh;
+	border-style:solid;
+	border-color:white;
+	color:white;
+	background-color:#05828e;
+	font-weight: 600;
+	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+
+}
+
+
+	.steam-button-1:hover{
+		background-color:#074146;
+		border-color:#9ba8b8;
+	}

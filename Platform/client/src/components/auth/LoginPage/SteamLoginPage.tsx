@@ -15,7 +15,10 @@ function SteamLogin() {
     <div id='backbox'>
 
       <div id='box'>
-      <h2>One last step</h2>
+      <div id="info-steam-connect">
+      <h2>Connect your Steam Account</h2>
+      <p> Link your Steam account to access and play your Steam games on our platform.</p>
+      </div>
         <div id='steambutton'>
           <button onClick={handleAuth} className="steambutton">
             <span>Connect Steam account</span>

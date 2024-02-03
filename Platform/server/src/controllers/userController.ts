@@ -3,8 +3,11 @@ import { Request, Response, NextFunction } from 'express';
 import User from "../models/User.js";
 import jwt from 'jsonwebtoken';
 const jwtSecret = process.env.JWT_SECRET || "DEFAULT_SECRET";
+import generateVmName from '../helpers/instance-resource-name-generator.js';
 
 export async function createUser (req: Request, res: Response): Promise<void> {
+  const vm  = await generateVmName();
+  console.log(vm)
   const {email} = req.body;
   const user = await User.findOne({ email: email });
   if (user){
@@ -18,6 +21,7 @@ export async function createUser (req: Request, res: Response): Promise<void> {
       email: email,
       password: hashedPassword,
       zone: req.body.zone,
+      virtualMachine: vm
     });
     const savedUser = await newUser.save();
     res.status(201).send(savedUser);

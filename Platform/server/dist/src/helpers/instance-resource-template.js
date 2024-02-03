@@ -1,7 +1,4 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.instanceConfigurator = void 0;
-function instanceConfigurator(zone, name) {
+export function instanceConfigurator(zone, name) {
     //Check out the structure of an instance resource here:https://cloud.google.com/compute/docs/reference/rest/v1/instances
     const instanceResource = {
         "name": `${name}`,
@@ -29,4 +26,3 @@ function instanceConfigurator(zone, name) {
     };
     return instanceResource;
 }
-exports.instanceConfigurator = instanceConfigurator;
