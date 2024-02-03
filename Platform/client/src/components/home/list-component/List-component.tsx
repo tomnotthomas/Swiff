@@ -7,16 +7,16 @@ import './list-component.css'
 function List ({games}) {
   if (!games) {
     return <div>Still loading the games...</div>;
-
   }
-
   if(games.results && games.results.length <= 4){
-    console.log(games.results.length)
     return (
       <div className= 'list-row'>
         <div className='list-big' >
           <>
-            {games.results && games.results.map((game) => <ListItemBig game={game}/>)}
+          {games.results &&
+              games.results.map((game: any) => (
+                <ListItemBig key={game.id} game={game} />
+              ))}
           </>
         </div>
       </div>
@@ -25,7 +25,10 @@ function List ({games}) {
         <div className= 'list-row'>
           <div className='list' >
             <>
-             {games.results && games.results.map((game) => <ListItem game={game}/>)}
+            {games.results &&
+              games.results.map((game: any) => (
+                <ListItem key={game.id} game={game} />
+              ))}
            </>
           </div>
        </div>

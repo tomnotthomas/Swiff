@@ -3,7 +3,6 @@ import User from "../models/User.js";
 import jwt from 'jsonwebtoken';
 const jwtSecret = process.env.JWT_SECRET || "DEFAULT_SECRET";
 export async function createUser(req, res) {
-    console.log(req.body);
     const { email } = req.body;
     const user = await User.findOne({ email: email });
     if (user) {
@@ -16,6 +15,7 @@ export async function createUser(req, res) {
         const newUser = new User({
             email: email,
             password: hashedPassword,
+            zone: req.body.zone,
         });
         const savedUser = await newUser.save();
         res.status(201).send(savedUser);

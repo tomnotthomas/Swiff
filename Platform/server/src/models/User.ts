@@ -1,6 +1,20 @@
 import mongoose from "mongoose";
-
 const Schema = mongoose.Schema;
+
+const gameSchema = new Schema({
+  appid: Number,
+  name: String,
+  playtime_forever: Number,
+  img_icon_url: String,
+  has_community_visible_stats: Boolean,
+  playtime_windows_forever: Number,
+  playtime_mac_forever: Number,
+  playtime_linux_forever: Number,
+  rtime_last_played: Number,
+  content_descriptorids: [Number],
+  playtime_disconnected: Number,
+});
+
 
 const userSchema = new Schema({
   email: {
@@ -10,7 +24,11 @@ const userSchema = new Schema({
   },
   userName: {
     type: String,
-    required: false,
+    required: false
+  },
+  steamID: {
+    type: String,
+    required: false
   },
   password: {
     type: String,
@@ -22,7 +40,7 @@ const userSchema = new Schema({
     required: true,
   },
   games: {
-    type: Array,
+    type: [gameSchema],
     required: false,
   },
   selectedGames: {
