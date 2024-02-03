@@ -1,13 +1,19 @@
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
 import User from '../models/User.js';
+import generateVmName from '../helpers/instance-resource-name-generator.js';
 dotenv.config();
 export const getSteamId = async (req, res) => {
     try {
+        const vm = await generateVmName();
         const steamIdString = req.query['openid.claimed_id'];
         const steamId = steamIdString.substring(steamIdString.length - 17);
         const email = req.user.userEmail;
         const user = await User.findOne({ email: email });
+        if (user && !user.virtualMachine) {
+            user.virtualMachine = vm;
+            await user.save();
+        }
         if (!user) {
             res.status(404).send({ error: '404', message: 'User not found' });
             return;
