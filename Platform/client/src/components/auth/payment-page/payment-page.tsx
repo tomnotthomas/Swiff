@@ -28,6 +28,7 @@ function PaymentPage() {
       if (data.success) {
         // Use navigate for redirection
         navigate(data.redirectTo);
+        window.location.href = "/steam-login"
       }
     })
     .catch(error => {
