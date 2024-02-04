@@ -2,7 +2,7 @@ export function instanceConfigurator(zone:string, name:string): {} {
   //Check out the structure of an instance resource here:https://cloud.google.com/compute/docs/reference/rest/v1/instances
   const instanceResource = {
     "name": `${name}`,
-    "machineType": `zones/${zone}/machineTypes/f1-micro`,
+    "machineType": `zones/${zone}/machineTypes/e2-standard-2`,
     "disks": [
       {
         "boot": true,

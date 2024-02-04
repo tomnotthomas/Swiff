@@ -4,6 +4,9 @@ import { getSteamGames, getSteamId} from './controllers/steamController.js';
 import { createUser, authUser } from './controllers/userController.js'
 import { auth, authByToken } from './middlewares/auth.js'
 import { request } from 'http';
+import {setPaymentStatus} from './controllers/paymentController.js';
+import {stopVm} from './controllers/stopVmController.js'
+import {startVm} from './controllers/startVmController.js'
 const router = Router();
 
 
@@ -19,7 +22,9 @@ router.get('/steamgames', getSteamGames);
 router.post('/register', createUser);
 router.post('/auth', authUser);
 router.get('/auth/steam/return', authByToken, getSteamId)
-
+router.post('/setpaiduser', setPaymentStatus)
+router.post('/stopvm', stopVm)
+router.post('/startvm',startVm)
 
 // GET /auth/steam/return
 //   Use passport.authenticate() as route middleware to authenticate the

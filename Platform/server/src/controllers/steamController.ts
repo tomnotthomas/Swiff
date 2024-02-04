@@ -2,6 +2,7 @@ import { Request, Response} from 'express';
 import fetch from 'node-fetch';
 import dotenv from 'dotenv';
 import User from '../models/User.js';
+import generateVmName from '../helpers/instance-resource-name-generator.js';
 
 dotenv.config();
 interface User {
@@ -10,11 +11,14 @@ interface User {
 
 export const getSteamId = async (req: Request, res: Response) => {
   try {
-
     const steamIdString = req.query['openid.claimed_id'] as string;
     const steamId = steamIdString.substring(steamIdString.length - 17);
     const email = (req.user as User).userEmail;
     const user = await User.findOne({ email: email });
+    
+    if(user){
+      await user.save();
+    }
 
     if (!user) {
       res.status(404).send({ error: '404', message: 'User not found' });
