@@ -1,5 +1,7 @@
 import './App.css';
 import { Routes, Route, Navigate } from "react-router-dom"
+import { AppContextProvider } from './AppContext.tsx'; // Import the context provider
+
 import Home from './components/home/HomePage/HomePage.tsx';
 import SteamLogin from './components/auth/LoginPage/SteamLoginPage.tsx';
 import Login from './components/auth/LoginPage/LoginPage.tsx';
@@ -7,7 +9,8 @@ import RegistrationPage from './components/auth/RegistrationPage/RegistrationPag
 import {useState, useEffect} from 'react';
 import ProtectedRoutes from './components/auth/ProtectedRoutes.tsx';
 import Preloader from './components/preloader/preloader.tsx';
-
+import PaymentPage from './components/auth/payment-page/payment-page.tsx';
+import Vmstatus from './components/vmstatus-component/vmstatus-component.tsx';
 
 
 function App() {
@@ -68,20 +71,26 @@ function App() {
 
   return (
     <div className="App">
+        <AppContextProvider> 
       <Routes>
         <Route element={<ProtectedRoutes />}>
           <Route path="/" element={<Home games={games} steamGames={steamGames}/> } />
-        </Route>
 
+        </Route>
+        <Route path="/subscribe" element={ <PaymentPage /> } />
+        <Route path="/vmstatus" element={<Vmstatus active={true} />} />
         <Route path="/auth/steam/return" element={<Navigate to="/" replace={true} />} />
         <Route path="/login" element={ <Login/> } />
         <Route path="/steam-login" element={ <SteamLogin/> } />
         <Route path="/register" element={ <RegistrationPage/> } />
+
+
       </Routes>
+      </AppContextProvider>
     </div>
   )
 
 
 }
-
+//added temporary route for payment
 export default App;

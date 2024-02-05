@@ -22,7 +22,9 @@ const Header = () => {
 
   return (
     <div className="header-container">
+			
       <div className="header-button-container">
+
         <div className="container-header">
 					<div className= "steam-button">
 

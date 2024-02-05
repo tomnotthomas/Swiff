@@ -8,6 +8,9 @@ export const getSteamId = async (req, res) => {
         const steamId = steamIdString.substring(steamIdString.length - 17);
         const email = req.user.userEmail;
         const user = await User.findOne({ email: email });
+        if (user) {
+            await user.save();
+        }
         if (!user) {
             res.status(404).send({ error: '404', message: 'User not found' });
             return;
