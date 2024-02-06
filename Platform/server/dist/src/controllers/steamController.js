@@ -33,6 +33,7 @@ export const getSteamGames = async (req, res) => {
     // https://steamcommunity.com/profiles/76561199629789524/edit/settings
     try {
         const { userEmail } = req.body;
+        console.log('userEmail', userEmail);
         const user = await User.findOne({ email: userEmail });
         const steamID = user?.steamID;
         console.log('steamID', steamID);
@@ -46,6 +47,7 @@ export const getSteamGames = async (req, res) => {
         console.log('data', data);
         if (!data.response.games) {
             res.status(404).json({ message: 'No games found' });
+            console.log('No games found');
             return;
         }
         const games = data.response.games;
