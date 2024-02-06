@@ -3,11 +3,12 @@ import { useAppContext } from '../../AppContext.tsx'; // Import the context hook
 import './vmstatus-component.css';
 import { FaRegCircleStop } from 'react-icons/fa6';
 import { useNavigate } from 'react-router-dom';
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
 
 
 
-
-function Vmstatus() {  
+function Vmstatus() {
   const navigate = useNavigate();
 
   const { isActive, setIsActive } = useAppContext(); // Access the shared context
@@ -23,7 +24,7 @@ function Vmstatus() {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        userEmail: 'tom@example.com',
+        userEmail: cookies.get('USER_DATA')?.email,
       }),
     })
       .then((response) => response.json())
@@ -46,7 +47,7 @@ function Vmstatus() {
         <FaRegCircleStop id='stop-button' />
       </div>
     </div>
-    
+
   );
 }
 

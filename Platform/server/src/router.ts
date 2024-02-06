@@ -18,7 +18,7 @@ const router = Router();
 //   user back to this application at /auth/steam/return
 router.get('/auth/steam', passport.authenticate('steam', { failureRedirect: '/login' }),
   function(req, res) { res.redirect('/') });
-router.get('/steamgames', getSteamGames);
+router.post('/steamgames', getSteamGames);
 router.post('/register', createUser);
 router.post('/auth', authUser);
 router.get('/auth/steam/return', authByToken, getSteamId)

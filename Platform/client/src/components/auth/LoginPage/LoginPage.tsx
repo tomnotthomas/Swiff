@@ -1,10 +1,9 @@
-import React, { useState } from "react";
 import './LoginPage.css';
+import React, { useState } from "react";
 import Cookies from 'universal-cookie';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from "react-router-dom";
 import { MdOutlineEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
-
 
 const cookies = new Cookies();
 
@@ -14,6 +13,8 @@ const Login: React.FC = () => {
     const [emailError, setEmailError] = useState<string>("");
     const [passwordError, setPasswordError] = useState<string>("");
     const [login, setLogin] = useState(false);
+
+    const navigate = useNavigate();
 
     const onButtonClick = async (e: React.FormEvent) => {
         e.preventDefault();
@@ -59,13 +60,24 @@ const Login: React.FC = () => {
 
         if (response.ok) {
             const data = await response.json()
+
+            const newUser = {email: data.email}
+
+            // Reset the form
             setEmail("");
             setPassword("");
             setLogin(true);
+
+
             cookies.set("TOKEN", data.token, {
                 path: "/",
-              });
-            window.location.href = "/steam-login"
+            });
+
+            cookies.set("USER_DATA", JSON.stringify(newUser), {
+                path: "/",
+            });
+
+            navigate("/steam-login");
 
         } else {
             console.error(`Error: ${response.status} - ${response.statusText}`);

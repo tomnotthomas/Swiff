@@ -7,6 +7,8 @@ import { FaCcMastercard } from "react-icons/fa";
 import { SiAmericanexpress } from "react-icons/si";
 import { FaCcDiscover } from "react-icons/fa";
 import { FaCcJcb } from "react-icons/fa";
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
 
 
 function PaymentPage() {
@@ -15,18 +17,18 @@ function PaymentPage() {
 
 
   const setPaymentStatusAndVM = () => {
-    setLoading(true);  
+    setLoading(true);
     fetch ('http://localhost:3001/setpaiduser', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-          //TODO THIS MAIL IS CURRENTLY HARDCODED AND NEEDS TO BECOME DYNAMIC
-          userEmail: 'tom@example.com'
+          //TODO THIS MAIL IS CURRENTLY HARDCODED AND NEEDS TO BECOME DYNAMIC - DONE
+          userEmail: cookies.get('USER_DATA')?.email
       })
     })
-    .then(response => 
+    .then(response =>
       response.json())
     .then(data => {
       if (data.success) {
@@ -65,7 +67,7 @@ function PaymentPage() {
           <FaCcDiscover className='card'/>
           <FaCcJcb className='card'/>
         </div>
-     
+
       </div>
     </div>
 </div>

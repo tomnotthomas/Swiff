@@ -143,7 +143,7 @@ export default function RegistrationPage() {
         </Form.Group>
 
         {/* password */}
-        <Form.Group controlId="formBasicPassword">     
+        <Form.Group controlId="formBasicPassword">
         <div className='input-description'>
         <RiLockPasswordLine className='icon-register' />
           <Form.Label className='registration-form-label'>
@@ -186,14 +186,14 @@ export default function RegistrationPage() {
           <label className="errorLabel"><br></br>{passwordConfirmError}</label>
         </Form.Group>
         {/* submit button */}
-        
+
         <Button
 
         className = 'register-button'
           variant="primary"
           type="submit"
           onClick={(e) => handleSubmit(e)}
-          
+
         >
           Register
           <MdStart />

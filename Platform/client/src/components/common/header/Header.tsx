@@ -10,11 +10,14 @@ const cookies = new Cookies();
 
 const token = cookies.get("TOKEN");
 
-const Header = () => {
+const Header = ({loggedSteam}) => {
 
+
+  // logout function
   const logout = () => {
     // destroy the cookie
     cookies.remove("TOKEN", { path: "/" });
+		cookies.remove("USER_DATA", { path: "/" });
     // redirect user to the landing page
     window.location.href = "/login";
   }
@@ -22,17 +25,19 @@ const Header = () => {
 
   return (
     <div className="header-container">
-			
+
       <div className="header-button-container">
 
         <div className="container-header">
-					<div className= "steam-button">
-
+				<div>
+					{loggedSteam ? (
+						/* Render this when loggedSteam is true */
+						<div></div>
+					) : (
+						/* Render this when loggedSteam is false */
 						<button className="steam-button-1">Connect to Steam</button>
-						</div>
-
-
-
+					)}
+				</div>
         	<div className="btn btn--1">
         		<div className="content">
         			<div className="front">

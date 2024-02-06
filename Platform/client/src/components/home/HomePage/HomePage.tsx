@@ -4,12 +4,12 @@ import List from '../list-component/List-component.tsx';
 import TopBanner from '../top-banner-component/Top-banner-component.tsx';
 import Vmstatus from '../vmstatus-component/vmstatus-component';
 
-function Home({games, steamGames}) {
+function Home({games, steamGames, loggedSteam}) {
 
 
   return (
       <div>
-        <Header/>
+        <Header loggedSteam={loggedSteam}/>
         <TopBanner games={games}/>
         <h1> My Steam Games</h1>
         <List games ={steamGames}/>
