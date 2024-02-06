@@ -6,6 +6,8 @@ import { authByToken } from './middlewares/auth.js';
 import { setPaymentStatus } from './controllers/paymentController.js';
 import { stopVm } from './controllers/stopVmController.js';
 import { startVm } from './controllers/startVmController.js';
+import { checkSteamID } from './controllers/steamIDController.js';
+import { checkForSubscription } from './controllers/subscriptionCheckController.js';
 const router = Router();
 // GET /auth/steam
 //   Use passport.authenticate() as route middleware to authenticate the
@@ -13,13 +15,15 @@ const router = Router();
 //   the user to steamcommunity.com.  After authenticating, Steam will redirect the
 //   user back to this application at /auth/steam/return
 router.get('/auth/steam', passport.authenticate('steam', { failureRedirect: '/login' }), function (req, res) { res.redirect('/'); });
-router.get('/steamgames', getSteamGames);
+router.post('/steamgames', getSteamGames);
 router.post('/register', createUser);
 router.post('/auth', authUser);
 router.get('/auth/steam/return', authByToken, getSteamId);
 router.post('/setpaiduser', setPaymentStatus);
 router.post('/stopvm', stopVm);
 router.post('/startvm', startVm);
+router.post('/checksteamid', checkSteamID);
+router.post('/checksubscription', checkForSubscription);
 // GET /auth/steam/return
 //   Use passport.authenticate() as route middleware to authenticate the
 //   request.  If authentication fails, the user will be redirected back to the
