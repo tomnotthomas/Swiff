@@ -38,12 +38,23 @@ export const getSteamId = async (req: Request, res: Response) => {
 };
 
 export const getSteamGames = async (req: Request, res: Response) => {
+  const {userEmail} = req.body;
+  console.log(req.body, 'req body')
+  const user = await User.findOne({ email: userEmail });
+  console.log(user)
+  // if (!user){
+  //   res.status(404)
+  //   .send({ error: '404', message: 'User not found' });
+  //   return;
+  // }
+
   try {
     // const email = req.user.userEmail as {email: string};
     // const user = await User.findOne({ email: email });
+    // console.log(user)
 
-    const cookies = await req.cookies;
-    console.log('cookies', cookies)
+    // const cookies = req.cookies;
+
 
     const response = await fetch(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${process.env.REACT_APP_STEAM_API_KEY}&steamid=${process.env.REACT_APP_STEAM_ID}&format=json&include_appinfo=true`);
     const data: any = await response.json();

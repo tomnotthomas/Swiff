@@ -2,11 +2,16 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSteamSquare } from '@fortawesome/free-brands-svg-icons';
 import './SteamLoginPage.css'
+import { Link, useNavigate } from 'react-router-dom';
+
+
 
 
 function SteamLogin() {
+  const navigate = useNavigate();
 
-  const handleAuth =() => {
+  const handleAuth =(e) => {
+    e.preventDefault();
     window.location.href = 'http://localhost:3001/auth/steam';
   };
 
@@ -29,7 +34,7 @@ function SteamLogin() {
           <div id='login-create-account'>
 
             <p>Connect Steam account later?</p>
-            <a href='./'>Skip</a>
+            <Link to='/'>Skip</Link>
           </div>
           </div>
         </div>

@@ -4,6 +4,7 @@ const AppContext = createContext();
 
 export function AppContextProvider({ children }) {
   const [isActive, setIsActive] = useState(false);
+  // const [user, setUser] = useState({});
 
   return (
     <AppContext.Provider value={{ isActive, setIsActive }}>

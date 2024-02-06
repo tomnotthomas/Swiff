@@ -3,6 +3,8 @@ import './listitem-big-component.css';
 import { GiGamepad } from 'react-icons/gi';
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../../AppContext.tsx'; // Import the context hook
+import Cookies from 'universal-cookie';
+const cookies = new Cookies();
 
 function ListItemBig({ game }) {
   const navigate = useNavigate();
@@ -15,7 +17,7 @@ function ListItemBig({ game }) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        userEmail: 'tom@example.com',
+        userEmail: cookies.get('USER_DATA')?.email,
       }),
     })
       .then((response) => response.json())
