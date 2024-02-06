@@ -4,22 +4,22 @@ import React from 'react';
 import Cookies from "universal-cookie";
 import { CgProfile } from "react-icons/cg";
 import { HiOutlineLogout } from "react-icons/hi";
+import { useNavigate } from 'react-router-dom';
+
 
 const cookies = new Cookies();
-
-
 const token = cookies.get("TOKEN");
 
 const Header = ({loggedSteam}) => {
 
+	const navigate = useNavigate();
 
   // logout function
   const logout = () => {
     // destroy the cookie
     cookies.remove("TOKEN", { path: "/" });
 		cookies.remove("USER_DATA", { path: "/" });
-    // redirect user to the landing page
-    window.location.href = "/login";
+    navigate("/login");
   }
 
 
