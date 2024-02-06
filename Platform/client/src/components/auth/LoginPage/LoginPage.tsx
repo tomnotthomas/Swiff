@@ -7,7 +7,7 @@ import { RiLockPasswordLine } from "react-icons/ri";
 
 const cookies = new Cookies();
 
-const Login: React.FC = () => {
+const Login: React.FC = (setLoggedSteam) => {
     const [email, setEmail] = useState<string>("");
     const [password, setPassword] = useState<string>("");
     const [emailError, setEmailError] = useState<string>("");
