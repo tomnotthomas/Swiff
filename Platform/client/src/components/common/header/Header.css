@@ -31,12 +31,13 @@
   flex-direction: row;
   justify-content: flex-end;
   align-items: flex-end;
+
 }
 
 
 .container-header {
 	background: #9ba8b8;
-  margin-top:2%;
+  /* margin-top:2%; */
 	position: absolute;
 	top: 50%;
 	left: 85%;
@@ -112,7 +113,7 @@
 	backface-visibility: hidden;
 	transform-style: preserve-3d;
   background-color: #05828e;
-  
+
 }
 .btn .content .back p {
 	font-size: .9rem;
@@ -172,4 +173,36 @@
 	.steam-button-1:hover{
 		background-color:#074146;
 		border-color:#9ba8b8;
+	}
+
+
+	.search-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 10px;
+
+	}
+
+	.search-input {
+		padding: 10px;
+		border: 1px solid #ccc;
+		border-radius: 5px;
+		margin-right: 10px;
+		margin-left: 10px;
+		width: 400px;
+		font-size: 16px;
+	}
+
+	.search-button , .back-home-button {
+		padding: 10px 20px;
+		background-color: rgb(192, 190, 190);
+		color: white;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+
+	.back-home-button {
+		padding: 10px 10px;
 	}

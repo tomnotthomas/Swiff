@@ -16,7 +16,7 @@ const Login: React.FC = (setLoggedSteam) => {
 
     const navigate = useNavigate();
 
-    const onButtonClick = async (e: React.FormEvent) => {
+    const onSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
 
         // Set initial error values to empty
@@ -127,7 +127,7 @@ const Login: React.FC = (setLoggedSteam) => {
 
                 className={"inputButton"}
                 type="button"
-                onClick={onButtonClick}
+                onClick={onSubmit}
                 value={"Log in"} />
         </div>
         {login ? (

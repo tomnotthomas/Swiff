@@ -61,8 +61,8 @@ export default function RegistrationPage() {
 
 
 
-    const url: string = "http://localhost:3001/register"; // TODO: Change it
-
+    const url: string = "http://localhost:3001/register";
+    
     try {
       const response: Response = await fetch(url, {
         method: "POST",
@@ -97,7 +97,7 @@ export default function RegistrationPage() {
     <div className ='registration-form'>
       <div className='registration-content'>
       <h2>Register</h2>
-      <Form onSubmit={(e) => handleSubmit(e)}>
+      <Form onSubmit={handleSubmit}>
         {/* email */}
         <Form.Group controlId="formBasicEmail">
         <div className='input-description'>
