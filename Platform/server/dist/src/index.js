@@ -13,6 +13,20 @@ const __dirname = dirname(__filename);
 const port = 3001;
 const app = express();
 dotenv.config();
+// const allowedOrigins = [
+//   'http://localhost:3000',
+//   'https://steamcommunity.com/',  // Add other origins as needed
+// ];
+// const corsOptions = {
+//   origin: function (origin, callback) {
+//     if (allowedOrigins.includes(origin)) {
+//       callback(null, true);
+//     } else {
+//       callback(new Error('Not allowed by CORS'));
+//     }
+//   },
+//   credentials: true,
+// };
 app.use(cors());
 app.use(bodyParser.json());
 app.use(cookieParser());
