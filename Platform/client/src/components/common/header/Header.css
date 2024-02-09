@@ -1,39 +1,33 @@
-/* Header.css */
 
-/* Style for the header container */
 .header-container {
-  width: 100%; /* Set your desired fixed width */
+  width: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  padding: 10px; /* Add padding as needed */
+  padding: 10px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   z-index: 1000;
 }
 
-/* Style for the button */
 .header-button {
-  background-color: #05828e; /* Set your button background color */
-  color: #fff; /* Set your button text color */
+  background-color: #05828e;
+  color: #fff;
   border: none;
   padding: 10px 15px;
   cursor: pointer;
 }
 
-/* Adjust the button position */
 .header-button-container {
-  margin-right: 10px; /* Set the margin to position the button at the right corner */
+  margin-right: 10px;
   width:100vh;
   height: 10px;
   display:flex;
   flex-direction: row;
   justify-content: flex-end;
   align-items: flex-end;
-
 }
-
 
 .container-header {
 	background: #9ba8b8;
@@ -51,7 +45,6 @@
 	padding-right:0%;
 }
 .btn {
-
 	cursor: pointer;
 	border-radius: 50%;
 	margin-right:5px;
@@ -85,6 +78,7 @@
 	backface-visibility: hidden;
 	transform-style: preserve-3d;
 }
+
 .btn .content .front .border {
 	content: '';
 	position: absolute;
@@ -134,16 +128,20 @@
 	backface-visibility: hidden;
 	box-shadow: 0px 0px 5px rgba(0, 0, 0, .3);
 }
+
 .btn .front i {
 	font-size: 2rem;
 	text-shadow: 0 0 4px rgba(0, 0, 0, .3);
 }
+
 .btn:hover .content {
 	transform: rotateY(.5turn) rotateX(-.03turn);
 }
+
 .btn--1 i {
 	color: #00acee;
 }
+
 .btn--2 i {
 	color: #c4302b;
 }
@@ -151,7 +149,6 @@
 .header-icon{
   font-size:x-large;
 }
-
 
 .steam-button-1{
 	border-radius: 20px;
@@ -166,43 +163,41 @@
 	background-color:#05828e;
 	font-weight: 600;
 	box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
 
+.steam-button-1:hover {
+	background-color:#074146;
+	border-color:#9ba8b8;
 }
 
 
-	.steam-button-1:hover{
-		background-color:#074146;
-		border-color:#9ba8b8;
-	}
+.search-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 10px;
 
+}
 
-	.search-container {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		margin-top: 10px;
+.search-input {
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	margin-right: 10px;
+	margin-left: 10px;
+	width: 400px;
+	font-size: 16px;
+}
 
-	}
+.search-button , .back-home-button {
+	padding: 10px 20px;
+	background-color: rgb(192, 190, 190);
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
 
-	.search-input {
-		padding: 10px;
-		border: 1px solid #ccc;
-		border-radius: 5px;
-		margin-right: 10px;
-		margin-left: 10px;
-		width: 400px;
-		font-size: 16px;
-	}
-
-	.search-button , .back-home-button {
-		padding: 10px 20px;
-		background-color: rgb(192, 190, 190);
-		color: white;
-		border: none;
-		border-radius: 5px;
-		cursor: pointer;
-	}
-
-	.back-home-button {
-		padding: 10px 10px;
-	}
+.back-home-button {
+	padding: 10px 10px;
+}

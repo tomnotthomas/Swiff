@@ -60,7 +60,6 @@ function Home({ setLoggedSteam, loggedSteam }) {
     body: JSON.stringify({
       userEmail: cookies.get("USER_DATA")?.email
     }),
-      // credentials: 'include',  // to include cookies in the request
     })
       .then((res) => res.json())
       .then((data) => {
@@ -89,7 +88,6 @@ function Home({ setLoggedSteam, loggedSteam }) {
   }, []);
 
 
-
  return (
   <div>
     <Header
@@ -100,7 +98,6 @@ function Home({ setLoggedSteam, loggedSteam }) {
       searchQuery={searchQuery}
       setSearchQuery={setSearchQuery}
       setSearchResults={setSearchResults}
-
     />
     <TopBanner games={gamesRow1}/>
     <h1> My Steam Games</h1>

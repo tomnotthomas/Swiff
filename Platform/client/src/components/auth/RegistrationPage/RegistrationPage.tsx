@@ -13,7 +13,6 @@ import { MdStart } from "react-icons/md";
 
 
 export default function RegistrationPage() {
-  // initial state
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
@@ -23,17 +22,14 @@ export default function RegistrationPage() {
   const [passwordConfirmError, setPasswordConfirmError] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
 
-
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
     //Validation
-     // Set initial error values to empty
      setEmailError("")
      setPasswordError("")
 
-     // Check if the user has entered both fields correctly
+
      if ("" === email) {
         setEmailError("Please enter your email");
         return;
@@ -60,9 +56,8 @@ export default function RegistrationPage() {
      }
 
 
-
     const url: string = "http://localhost:3001/register";
-    
+
     try {
       const response: Response = await fetch(url, {
         method: "POST",
@@ -185,19 +180,14 @@ export default function RegistrationPage() {
           />
           <label className="errorLabel"><br></br>{passwordConfirmError}</label>
         </Form.Group>
+
         {/* submit button */}
-
         <Button
-
-        className = 'register-button'
+          className = 'register-button'
           variant="primary"
           type="submit"
           onClick={(e) => handleSubmit(e)}
-
-        >
-          Register
-          <MdStart />
-
+          >Register<MdStart />
         </Button>
 
         {/* display success message */}

@@ -2,7 +2,6 @@ import ListItemBig from "../listitem-big-component/listitem-big-component.tsx";
 import ListItem from "../listitem-component/Listitem-component.tsx"
 import './list-component.css'
 
-
 //games.results
 function List ({games}) {
   if (!games) {
@@ -13,10 +12,10 @@ function List ({games}) {
       <div className= 'list-row'>
         <div className='list-big' >
           <>
-          {games.results &&
-              games.results.map((game: any) => (
-                <ListItemBig key={game.id} game={game} />
-              ))}
+            {games.results &&
+                games.results.map((game: any) => (
+                  <ListItemBig key={game.id} game={game} />
+            ))}
           </>
         </div>
       </div>

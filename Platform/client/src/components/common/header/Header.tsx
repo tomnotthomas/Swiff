@@ -1,4 +1,3 @@
-// Header.js
 import './Header.css';
 import React from 'react';
 import Cookies from "universal-cookie";
@@ -8,15 +7,12 @@ import { CgProfile } from "react-icons/cg";
 import { HiOutlineLogout } from "react-icons/hi";
 import { useNavigate } from 'react-router-dom';
 
-
 const cookies = new Cookies();
-const token = cookies.get("TOKEN");
 
 const Header = ({loggedSteam, searchQuery, setSearchQuery, searching, setSearching, setSearchResults}) => {
 
 	const navigate = useNavigate();
 
-  // logout function
   const logout = () => {
     // destroy the cookie
     cookies.remove("TOKEN", { path: "/" });
@@ -52,9 +48,6 @@ const Header = ({loggedSteam, searchQuery, setSearchQuery, searching, setSearchi
     setSearchQuery('');
   };
 
-
-
-
   return (
     <div className="header-container">
 
@@ -75,10 +68,8 @@ const Header = ({loggedSteam, searchQuery, setSearchQuery, searching, setSearchi
         <div className="container-header">
 				<div>
 					{loggedSteam ? (
-						/* Render this when loggedSteam is true */
 						<div></div>
 					) : (
-						/* Render this when loggedSteam is false */
 						<button className="steam-button-1">Connect to Steam</button>
 					)}
 				</div>

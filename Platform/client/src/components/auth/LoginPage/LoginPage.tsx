@@ -90,7 +90,6 @@ const Login: React.FC = (setLoggedSteam) => {
             setPassword("");
             setLogin(true);
 
-
             cookies.set("TOKEN", data.token, {
                 path: "/",
             });
