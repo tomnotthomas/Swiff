@@ -175,7 +175,8 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top: 10px;
+	
+	margin-left: 20px;
 
 }
 
@@ -185,13 +186,14 @@
 	border-radius: 5px;
 	margin-right: 10px;
 	margin-left: 10px;
-	width: 400px;
+	width:100%;
 	font-size: 16px;
+	opacity: 70%;
 }
 
 .search-button , .back-home-button {
-	padding: 10px 20px;
-	background-color: rgb(192, 190, 190);
+	padding: 13px 20px;
+	background-color: #074146;
 	color: white;
 	border: none;
 	border-radius: 5px;

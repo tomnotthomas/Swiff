@@ -60,7 +60,7 @@ const Header = ({loggedSteam, searchQuery, setSearchQuery, searching, setSearchi
 					onChange={(e) => setSearchQuery(e.target.value)}
 					placeholder="Search for games..."
 				/>
-				<button className="search-button" onClick={handleSearch}>Go!</button>
+				<button className="search-button" onClick={handleSearch}>Search</button>
 			</div>
 
       <div className="header-button-container">

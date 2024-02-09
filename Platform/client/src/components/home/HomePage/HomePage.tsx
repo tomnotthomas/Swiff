@@ -100,8 +100,7 @@ function Home({ setLoggedSteam, loggedSteam }) {
       setSearchResults={setSearchResults}
     />
     <TopBanner games={gamesRow1}/>
-    <h1> My Steam Games</h1>
-    <List games ={steamGames}/>
+ 
      { searching ? (
         <div>
           <h1>Search Results</h1>
@@ -109,11 +108,15 @@ function Home({ setLoggedSteam, loggedSteam }) {
       </div>
     ) : (
       <>
-        <h1>Action</h1>
+        <div id='my-steam-games-alignment'>
+          <h1 id ='my-steam-games-homepage'> My Steam Games</h1>
+        </div>
+        <List games ={steamGames}/>
+        <h1 className='category-homepage'>Action</h1>
         <List games ={gamesRow1}/>
-        <h1>Sports</h1>
+        <h1 className='category-homepage'>Sports</h1>
         <List games ={gamesRow2}/>
-        <h1>Strategy</h1>
+        <h1 className='category-homepage'>Strategy</h1>
         <List games ={gamesRow3}/>
       </>
     )}

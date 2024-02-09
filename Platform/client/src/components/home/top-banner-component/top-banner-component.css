@@ -15,10 +15,3 @@
   z-index: 0;
 }
 
-:root {
-  --gradient: linear-gradient(
-    45deg,
-    #e7eaef,
-    #9ba8b8
-  );
-}
