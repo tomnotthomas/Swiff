@@ -1,3 +1,6 @@
+
+![ScreenRecording2024-02-09at21 01 48-ezgif com-speed](https://github.com/tomnotthomas/Swiff/assets/126760913/7c8e6fe0-b4d5-4f7e-ab38-6b924d20085d)
+
 # 🎮 Welcome to Swiff
 
 Welcome to Swiff! The Game Streaming Platform for Mac Users - an innovative solution that integrates seamlessly with Steam 🚂 and leverages the Google Cloud Platform ☁️ to create powerful gaming servers. This platform is built using TypeScript, with a backend based on Express.js, and uses MongoDB and Mongoose for database management.
