@@ -9,7 +9,6 @@ Goodspeed aka Swiff! is a gaming streaming platform It provides users with acces
 1. To install the required dependencies, run `npm install` from the client, server and react-website folders.
 
 2. Create a `.env` file in the client folder and add the following variables:
-REACT_APP_STEAM_ID =
 REACT_APP_RAWG_API_KEY =
 
 3. Run `npm start` from the client folder to start the client. The project will now be running at http://localhost:3000.\
@@ -26,7 +25,6 @@ Tokens: JWT;
 Back-end: Node.js, Express, MongoDB;
 Cloud: Google Cloud;
 API: Steam, RAWG;
-
 
 ## Contributors
 Tom Schwabe
