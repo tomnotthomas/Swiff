@@ -4,13 +4,11 @@
   width: 250px;
   height: 130px;
   border-radius: 10px;
- 
   margin-bottom: 1.9rem;
   object-fit: cover;
   z-index: 3;
   filter: brightness(90%);
   display: block;
-
 }
 
 .small-image-info{
@@ -21,15 +19,12 @@
   border-top-left-radius: 5%;
   border-bottom-left-radius: 0%;
   border-bottom-right-radius:0%;
- 
   margin-bottom: 1.9rem;
   object-fit: cover;
   z-index: 3;
   filter: brightness(100%);
   display: block;
-
 }
-
 
 #box-container{
   position: relative;
@@ -46,9 +41,7 @@
   transition: 2s;
   margin-left:-1.7rem;
   transition: all .5s ease;
- 
 }
-
 
 #info-box{
     position: absolute;

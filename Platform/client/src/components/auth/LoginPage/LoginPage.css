@@ -19,9 +19,6 @@
   z-index: 0; /* This ensures the background stays behind the content */
 }
 
-
-
-
 .titleContainer {
   display: flex;
   flex-direction: column;

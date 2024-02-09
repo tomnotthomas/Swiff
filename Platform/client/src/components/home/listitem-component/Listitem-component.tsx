@@ -12,7 +12,6 @@ function ListItem({game}) {
         <div id='info-details'>
           <p>Released on {game.released}</p>
           <p>Rating {game.rating}</p>
-
         </div>
         <div id='play-rating'>
           <GiGamepad id='gamepad-icon' />
