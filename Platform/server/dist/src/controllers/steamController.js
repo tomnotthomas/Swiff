@@ -33,10 +33,8 @@ export const getSteamGames = async (req, res) => {
     // https://steamcommunity.com/profiles/76561199629789524/edit/settings
     try {
         const { userEmail } = req.body;
-        console.log('userEmail', userEmail);
         const user = await User.findOne({ email: userEmail });
         const steamID = user?.steamID;
-        console.log('steamID', steamID);
         const response = await fetch(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${process.env.REACT_APP_STEAM_API_KEY}&steamid=${steamID}&format=json&include_appinfo=true`);
         if (!response.ok) {
             console.error(`Error: ${response.status} - ${response.statusText}`);
@@ -44,14 +42,12 @@ export const getSteamGames = async (req, res) => {
             return;
         }
         const data = await response.json();
-        console.log('data', data);
         if (!data.response.games) {
             res.status(404).json({ message: 'No games found' });
             console.log('No games found');
             return;
         }
         const games = data.response.games;
-        console.log('games', games);
         if (user) {
             user.games = games;
             await user.save();

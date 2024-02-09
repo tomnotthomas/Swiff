@@ -34,7 +34,9 @@ function ListItemBig({ game }) {
   };
 
   return (
+    
     <div id='box-container-big'>
+      
       <div id='info-box-big'>
         <img className='small-image-info-big' src={game.background_image} alt='gta'></img>
         <div id='info-details-big'>

@@ -1,0 +1,23 @@
+.category-homepage{
+  margin-left:3%;
+  margin-bottom:2%;
+}
+
+#my-steam-games-homepage{
+  color:black;
+  position: relative;
+  z-index: 1000;
+  margin-top:5%;  
+  margin-bottom: 2%;
+  
+}
+
+#my-steam-games-alignment{
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  align-items:center;
+  justify-content: center;
+  margin-left: 3%;
+  margin-top:5%;
+}
