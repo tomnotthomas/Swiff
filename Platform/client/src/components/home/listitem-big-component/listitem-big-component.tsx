@@ -4,6 +4,7 @@ import { GiGamepad } from 'react-icons/gi';
 import { useNavigate } from 'react-router-dom';
 import { useAppContext } from '../../../AppContext.tsx'; // Import the context hook
 import Cookies from 'universal-cookie';
+
 const cookies = new Cookies();
 
 function ListItemBig({ game }) {

@@ -131,23 +131,20 @@
 }
 
 #backbox::before {
-
-		content:""; /* required for ::before */
-		position:fixed; /* don't scroll with page */
-		z-index:1; /* place behind elements on page */
-		width:100%;
-		height:100%;
-		background-image: url('../../../images/DALL·E\ 2024-02-02\ 12.43.53\ -\ A\ digital\ illustration\ for\ a\ cloud\ gaming\ platform\ background\,\ designed\ in\ a\ 3D\ high-end\ video\ game\ style.\ The\ color\ palette\ includes\ bright\ and\ light.webp');
+  content:""; /* required for ::before */
+  position:fixed; /* don't scroll with page */
+  z-index:1; /* place behind elements on page */
+  width:100%;
+  height:100%;
+  background-image: url('../../../images/DALL·E\ 2024-02-02\ 12.43.53\ -\ A\ digital\ illustration\ for\ a\ cloud\ gaming\ platform\ background\,\ designed\ in\ a\ 3D\ high-end\ video\ game\ style.\ The\ color\ palette\ includes\ bright\ and\ light.webp');
   background-repeat: no-repeat;
   background-size: cover;
   filter: blur(8px);
-}  
+}
 
 .small-notification{
   font-size: small;
 }
-
-
 
 #login-create-account{
   display: flex;
@@ -294,21 +291,16 @@
 }
 
 #backbox::before {
-
-		content:""; /* required for ::before */
-		position:fixed; /* don't scroll with page */
-		z-index:1; /* place behind elements on page */
-		width:100%;
-		height:100%;
-		background-image: url('../../../images/DALL·E\ 2024-02-02\ 12.43.53\ -\ A\ digital\ illustration\ for\ a\ cloud\ gaming\ platform\ background\,\ designed\ in\ a\ 3D\ high-end\ video\ game\ style.\ The\ color\ palette\ includes\ bright\ and\ light.webp');
+  content:""; /* required for ::before */
+  position:fixed; /* don't scroll with page */
+  z-index:1; /* place behind elements on page */
+  width:100%;
+  height:100%;
+  background-image: url('../../../images/DALL·E\ 2024-02-02\ 12.43.53\ -\ A\ digital\ illustration\ for\ a\ cloud\ gaming\ platform\ background\,\ designed\ in\ a\ 3D\ high-end\ video\ game\ style.\ The\ color\ palette\ includes\ bright\ and\ light.webp');
   background-repeat: no-repeat;
   background-size: cover;
   filter: blur(8px);
-}  
-
-
-
-
+}
 
 #login-create-account{
   display: flex;
@@ -317,14 +309,12 @@
   margin-top:5%;
 }
 
-
 #info-steam-connect{
   width:40%;
   display: flex;
   flex-direction:column;
   margin-right:2%;
 }
-
 
 #paypal {
   font-size: 80px;

@@ -2,19 +2,14 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSteamSquare } from '@fortawesome/free-brands-svg-icons';
 import './SteamLoginPage.css'
-import { Link, useNavigate } from 'react-router-dom';
-
-
-
+import { Link } from 'react-router-dom';
 
 function SteamLogin() {
-  const navigate = useNavigate();
 
   const handleAuth =(e) => {
     e.preventDefault();
     window.location.href = 'http://localhost:3001/auth/steam';
   };
-
 
   return (
     <div id='backbox'>

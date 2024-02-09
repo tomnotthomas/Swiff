@@ -1,4 +1,4 @@
-.registration-form{
+.registration-form {
   position:absolute;
   display:flex;
   flex-direction:column;
@@ -26,10 +26,7 @@
   z-index: 0; /* This ensures the background stays behind the content */
 }
 
-
-
-
-.container-registration{
+.container-registration {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -51,7 +48,7 @@
   padding-left:6.5%;
 }
 
-.register-button{
+.register-button {
   width: 40vb;
   height: 4.5vb;
   border-style: none;
@@ -61,32 +58,31 @@
   border-radius: 5px;
   margin-top: 10%;
   margin-bottom:10%;
-
   display:flex;
   align-items:center;
   align-content:center;
   justify-content:center;
 }
 
-.registration-content{
+.registration-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-content: space-between;
 }
 
-.registration-form-label{
+.registration-form-label {
   font-size: large;
 }
 
 
-.icon-register{
+.icon-register {
   font-size: x-large;
   margin-right:2%;
   color:#05828e;
 }
 
-.input-description{
+.input-description {
   margin-top:3%;
   margin-bottom: 3%;
   display: flex;
@@ -94,14 +90,12 @@
   align-items:center;
 }
 
-.registration-note-to-login{
+.registration-note-to-login {
   font-size:x-small;
   margin-left:1%;
-
 }
 
-#registration-note{
+#registration-note {
   display: flex;
-
 }
 
