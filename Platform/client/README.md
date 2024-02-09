@@ -1,6 +1,6 @@
 # 🚀 Getting Started with Swiff Frontend
 
-Welcome to the setup guide for Swiff, your go-to app for gaming integration and management. Follow these steps to get your frontend up and running smoothly.
+Welcome to the setup guide for Swiff, your go-to app for gaming platform for Mac. Follow these steps to get your frontend up and running smoothly.
 
 ## Initial Setup
 
