@@ -1,11 +1,23 @@
 .top-screen {
-  background-color: #9ba8b8;
+  display:flex;
+  justify-content:center;
+  flex-direction: column;
+  
   width: 100%;
-  height: 60rem;
 }
 
-.image{
+.image-header{
   width:100%;
   height: auto;
-
 }
+
+.top-screen-headline{
+  max-width:40%;
+  color:white;
+  position:absolute;
+  display:flex;
+  flex-direction: row;
+  padding-left:10%;
+  font-size:65px;
+}
+

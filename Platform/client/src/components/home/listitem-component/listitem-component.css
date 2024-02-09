@@ -1,0 +1,88 @@
+.small-image{
+  position: relative;
+  border: solid 3px #808a98 ;
+  width: 250px;
+  height: 130px;
+  border-radius: 10px;
+  margin-bottom: 1.9rem;
+  object-fit: cover;
+  z-index: 3;
+  filter: brightness(90%);
+  display: block;
+}
+
+.small-image-info{
+  position: relative;
+  width: 300px;
+  height: 180px;
+  border-top-right-radius: 5%;
+  border-top-left-radius: 5%;
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius:0%;
+  margin-bottom: 1.9rem;
+  object-fit: cover;
+  z-index: 3;
+  filter: brightness(100%);
+  display: block;
+}
+
+#box-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-left:1rem;
+  margin-right:1rem;
+}
+
+#box-container:hover #info-box{
+  position:absolute;
+  display:flex;
+  align-items: center;
+  transition: 2s;
+  margin-left:-1.7rem;
+  transition: all .5s ease;
+}
+
+#info-box{
+    position: absolute;
+    z-index: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: var(--gradient);
+    border: solid #EEF6F9 2px;
+    border-radius: 5%;;
+    display:none;
+}
+
+#info-details{
+  display:flex;
+  align-items: center;
+}
+
+#gamepad-icon{
+  margin-top: 10%;
+  margin-bottom:4%;
+  font-size:90px;
+  color: #05828e;
+}
+
+#gamepad-icon:hover{
+  background-color:#EEF6F9;
+  border:#05828e solid 2px;
+  border-radius:100%;
+}
+
+#play-rating{
+  display:flex;
+  align-items: flex-end;
+}
+
+:root {
+  --gradient: linear-gradient(
+    45deg,
+    #e7eaef,
+    #9ba8b8
+  );
+}
+

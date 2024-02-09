@@ -1,3 +1,5 @@
 # Ignore Node.js modules
 node_modules/
 .env
+.DS_Store
+package-lock.json
