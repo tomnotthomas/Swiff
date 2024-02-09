@@ -58,7 +58,5 @@ We hope you enjoy using our Game Streaming Platform. For more details on setup a
 Tom Schwabe
 Andro Kubonin
 
-## License:
-This project is licensed under the terms of the MIT license.
 
 
