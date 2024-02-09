@@ -4,7 +4,7 @@ import Cookies from 'universal-cookie';
 import { useNavigate, Link } from "react-router-dom";
 import { MdOutlineEmail } from "react-icons/md";
 import { RiLockPasswordLine } from "react-icons/ri";
-
+import { useEffect } from 'react';
 const cookies = new Cookies();
 
 const Login: React.FC = (setLoggedSteam) => {
@@ -13,6 +13,28 @@ const Login: React.FC = (setLoggedSteam) => {
     const [emailError, setEmailError] = useState<string>("");
     const [passwordError, setPasswordError] = useState<string>("");
     const [login, setLogin] = useState(false);
+    const [hasSubscription, setSubscription] =useState(false);
+
+    useEffect(() => {
+        // Fetch and check Steam ID when component mounts or userEmail changes
+        fetch('http://localhost:3001/checksubscription', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            userEmail: cookies.get('USER_DATA')?.email,
+          }),
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            setSubscription(data.hasSubscription); // Set hasSteam based on the response
+          })
+          .catch((error) => {
+            console.error('Error checking subscription', error);
+          });
+      }, [cookies.get('USER_DATA')?.email]);
+    
 
     const navigate = useNavigate();
 
@@ -76,9 +98,11 @@ const Login: React.FC = (setLoggedSteam) => {
             cookies.set("USER_DATA", JSON.stringify(newUser), {
                 path: "/",
             });
-
-            navigate("/steam-login");
-
+            if(hasSubscription){
+                navigate('/subscribe')
+            }else {
+            navigate("/");
+            }
         } else {
             console.error(`Error: ${response.status} - ${response.statusText}`);
         }

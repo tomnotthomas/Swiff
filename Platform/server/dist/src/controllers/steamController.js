@@ -29,21 +29,38 @@ export const getSteamId = async (req, res) => {
     }
 };
 export const getSteamGames = async (req, res) => {
+    // to get games from user, his account privacy settings for Game Details should be set to 'public'.
+    // https://steamcommunity.com/profiles/76561199629789524/edit/settings
     try {
-        // const email = req.user.userEmail as {email: string};
-        // const user = await User.findOne({ email: email });
-        const cookies = await req.cookies;
-        console.log('cookies', cookies);
-        const response = await fetch(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${process.env.REACT_APP_STEAM_API_KEY}&steamid=${process.env.REACT_APP_STEAM_ID}&format=json&include_appinfo=true`);
+        const { userEmail } = req.body;
+        console.log('userEmail', userEmail);
+        const user = await User.findOne({ email: userEmail });
+        const steamID = user?.steamID;
+        console.log('steamID', steamID);
+        const response = await fetch(`http://api.steampowered.com/IPlayerService/GetOwnedGames/v0001/?key=${process.env.REACT_APP_STEAM_API_KEY}&steamid=${steamID}&format=json&include_appinfo=true`);
+        if (!response.ok) {
+            console.error(`Error: ${response.status} - ${response.statusText}`);
+            res.status(response.status).json({ message: `Error: ${response.status} - ${response.statusText}` });
+            return;
+        }
         const data = await response.json();
-        // const games = data.response.games;
-        // user.games = games;
-        // await user.save();
+        console.log('data', data);
+        if (!data.response.games) {
+            res.status(404).json({ message: 'No games found' });
+            console.log('No games found');
+            return;
+        }
+        const games = data.response.games;
+        console.log('games', games);
+        if (user) {
+            user.games = games;
+            await user.save();
+        }
         res.json(data);
-        // console.log('Data from getStemGames', data.response.games);
     }
     catch (err) {
         if (err instanceof Error) {
+            console.log(err);
             res.status(500).json({ message: err.message });
         }
         else {

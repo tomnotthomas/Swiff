@@ -81,7 +81,7 @@ export default function RegistrationPage() {
         setPassword("");
         setPasswordConfirm("");
         setRegister(true);
-        window.location.href = "/subscribe"
+        window.location.href = "/login"
 
       } else {
         console.error(`Error: ${response.status} - ${response.statusText}`);
