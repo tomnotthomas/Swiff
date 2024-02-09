@@ -98,9 +98,9 @@ const Login: React.FC = (setLoggedSteam) => {
                 path: "/",
             });
             if(hasSubscription){
-                navigate('/subscribe')
+                navigate('/')
             }else {
-            navigate("/");
+            navigate("/subscribe");
             }
         } else {
             console.error(`Error: ${response.status} - ${response.statusText}`);

@@ -51,9 +51,9 @@ function PaymentPage() {
         if (data.success) {
           setLoading(false);
           if (hasSteam) {
-            window.location.href = '/steam-login';
+            window.location.href = '/';
           } else {
-            window.location.href = '/'
+            window.location.href = '/steam-login'
           }
         }
       })
@@ -72,11 +72,15 @@ function PaymentPage() {
   <p> And enjoy 20h of high quality gaming per month</p>
   <div id='login-create-account'>
         <p className="small-notification">Continue without subscription</p>
-        {isLoading && <p>Your Gaming environment is currently being set up...</p>}
         <a className="small-notification" href='./'>Skip</a>
+        {isLoading && <p className='small-notification-setup'>Setting up gaming machine</p>}
+       
       </div>
   </div>
+
     <div id='steambutton'>
+    
+      <div>
         <FaCcPaypal id='paypal' onClick={setPaymentStatusAndVM}/>
         <div className="icon-cards">
           <FaCcMastercard className='card' />
@@ -84,6 +88,16 @@ function PaymentPage() {
           <FaCcDiscover className='card'/>
           <FaCcJcb className='card'/>
         </div>
+      </div>
+      <div id='steam-container-subscribe'>        
+               
+         
+          {isLoading && 
+          <div className = 'loader-subscribe'> </div>
+        }
+    </div>
+      
+
 
       </div>
     </div>
