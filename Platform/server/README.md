@@ -1,4 +1,4 @@
-# Google Cloud Setup for Gaming Project/Backend 💻🎮
+ Google Cloud Setup for Gaming Project/Backend 💻🎮
 
 This project leverages the power of Google Cloud. Here's how to get started:
 
@@ -43,3 +43,24 @@ Now, you should be fully equipped to deploy and manage your gaming machines in G
 ---
 
 **Note**: Always check for the latest compatibility and updates for tools like Sunshine and Moonlight to ensure optimal performance. 🚀
+
+## Project Setup
+
+### Installing Dependencies
+
+Run the following command to install all necessary dependencies:
+
+```bash
+npm i
+
+## Environment Configuration
+
+Create an `.env` file in the root directory of the project and add the following variables:
+
+- `REACT_APP_STEAM_API_KEY` - Your Steam API Key.
+- `DATABASE_PORT` - The port where your database is running.
+- `DATABASE_NAME` - The name of your database.
+- `GOOGLE_PROJ_ID` - Your Google Cloud Platform project ID.
+- `JWT_SECRET` - Your JSON Web Token secret.
+
+Ensure that each variable is correctly set to ensure the smooth running of the application.
