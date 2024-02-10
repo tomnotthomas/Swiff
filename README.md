@@ -36,10 +36,10 @@ The React website serves as an additional web interface for the platform, offeri
 
 ## 🛠️ Technologies Used
 
-- **Backend**: Express.js, MongoDB, Mongoose
-- **Frontend**: TypeScript, Steam API
+- **Backend**: Typescript, Express.js, MongoDB, Mongoose
+- **Frontend**: TypeScript, React.js, Steam API
 - **Cloud**: Google Cloud Platform
-- **Additional**: React.js for the separate website
+- **Additional**: Javascript, React.js for the separate website
 
 ## 📜 License
 
