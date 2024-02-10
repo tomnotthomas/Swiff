@@ -46,13 +46,6 @@ Now, you should be fully equipped to deploy and manage your gaming machines in G
 
 ## Project Setup
 
-### Installing Dependencies
-
-Run the following command to install all necessary dependencies:
-
-```bash
-npm i
-
 ## Environment Configuration
 
 Create an `.env` file in the root directory of the project and add the following variables:
@@ -64,3 +57,12 @@ Create an `.env` file in the root directory of the project and add the following
 - `JWT_SECRET` - Your JSON Web Token secret.
 
 Ensure that each variable is correctly set to ensure the smooth running of the application.
+
+### Installing Dependencies
+
+Run the following command to install all necessary dependencies:
+
+```bash
+npm i
+npm i run build
+npm i run start
